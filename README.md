@@ -21,6 +21,7 @@ func init_mod() -> void:
 ```
 
 3. The ExampleMod folder should then be made into a .zip file and placed into the mods folder.
+4. The folder containing `main.gd` and the .zip file have to have the exact same name.
 
 As the game loads this mod it will call the defined `init_mod()` function.
 You can use this function to interact with any of the classes of the game to add extra content.
