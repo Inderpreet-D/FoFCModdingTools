@@ -1,19 +1,17 @@
 # Founder of the Final Cult Modding Tools
 
-This repository includes a bunch of example mods that can be used to quickly get started on a new mod.
-
-## Installing Mods
-
-Founder of the Final Cult can load any .zip files that it finds in its mods folder.
+This repository includes a bunch of example mods that can be used to quickly get started on a new mod. Every example has a separate folder that ends in Mod, like CursorMod for example.
 
 ## Creating Mods
 
-Prerequisites
+### Prerequisites
 
-- a copy of Founder of the Final Cult
+- Get a copy of Founder of the Final Cult
 - Clone this repository
 - Godot RE Tools, available at https://github.com/GDRETools/gdsdecomp
 - Decompile the .exe file of the game, "Cult Survivors.exe", into this repository, you should see a bunch of folders on the same level as this README file
+
+### Structure
 
 Mod contents for a mod called "ExampleMod" should be organized as follows:
 
@@ -37,3 +35,25 @@ For example, you can use this function to:
 - instantiate a scene and add it as a child of any nodes
 - register callbacks for signals
 - add new definitions for Backgrounds, Game Modes, Levels, etc.
+
+## Installing Mods
+
+Founder of the Final Cult can load any .zip files that it finds in its mods folder.
+
+### Packaging Mods
+
+After you have created a mod you can run `python zip-mods.py YourModName` to package the mod as a zip file and move it to the correct directory to be loaded by the game. This assumes that you have python 3 installed.
+
+### Sharing Mods
+
+Mods can be shared through the Discord server for now. You can join the server from the icon on the main menu.
+
+## FAQs
+
+1. How do I do (some specific thing)?
+
+- You can ask questions in the Discord to get help with understanding how the game works.
+
+2. What do I need to know to make a mod?
+
+- Some scripting knowledge and understanding of Godot is required, but it is a very user friendly game engine and you can always use the included example mods as a starting point.
