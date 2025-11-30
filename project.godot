@@ -11,10 +11,477 @@ config_version=5
 [application]
 
 config/name="FoFCModdingTools"
+config/version="1.0.0"
+config/use_custom_user_dir=true
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+ClassRegistry="*res://autoloads/ClassRegistry.gd"
+SceneCache="*res://autoloads/SceneCache.gd"
+AudioManager="*res://autoloads/audio_manager/AudioManager.gd"
+Utilities="*res://autoloads/Utilities.gd"
+DefHandler="*res://autoloads/DefHandler.gd"
+GameModeHandler="*res://autoloads/GameModeHandler.gd"
+LevelHandler="*res://autoloads/LevelHandler.gd"
+SceneSwitcher="*res://autoloads/SceneSwitcher.gd"
+UpgradeData="*res://autoloads/UpgradeData.gd"
+Passives="*res://autoloads/Passives.gd"
+Global="*res://autoloads/Global.gd"
+ShopData="*res://autoloads/ShopData.gd"
+Stats="*res://autoloads/Stats.gd"
+Weapons="*res://autoloads/Weapons.gd"
+Backgrounds="*res://autoloads/Backgrounds.gd"
+EnemySpawner="*res://autoloads/EnemySpawner.gd"
+PickupHandler="*res://autoloads/PickupHandler.gd"
+Accessibility="*res://autoloads/accessibility/Accessibility.gd"
+Options="*res://autoloads/Options.gd"
+Overlay="*res://autoloads/Overlay.gd"
+BossHealthBar="*res://autoloads/BossHealthBar.gd"
+EventBus="*res://autoloads/EventBus.gd"
+StatTracker="*res://autoloads/StatTracker.gd"
+Bosses="*res://autoloads/Bosses.gd"
+InputEcho="*res://autoloads/input_echo/InputEcho.tscn"
+NodePool="*res://autoloads/NodePool.gd"
+AchievementManager="*res://autoloads/achievement_manager/AchievementManager.gd"
+DebugMenu="*res://addons/debug_menu/debug_menu.tscn"
+InputManager="*res://autoloads/InputManager.gd"
+SteamManager="*res://autoloads/SteamManager.gd"
+InputHelper="*res://addons/input_helper/input_helper.gd"
+ModLoader="*res://autoloads/mod_loader/ModLoader.gd"
+
+[display]
+
+window/size/viewport_width=1600
+window/size/viewport_height=900
+window/stretch/mode="canvas_items"
+window/stretch/aspect="ignore"
+window/handheld/orientation=4
+
+[file_customization]
+
+folder_colors={
+"res://BackgroundMod/": "teal",
+"res://CursorMod/": "teal",
+"res://NodeMod/": "teal",
+"res://ShaderMod/": "teal",
+"res://addons/": "gray",
+"res://autoloads/": "purple",
+"res://classes/": "purple"
+}
+
+[filesystem]
+
+import/blender/enabled=false
+import/fbx/enabled=false
+
+[importer_defaults]
+
+texture={
+"compress/bptc_ldr": 0,
+"compress/hdr_mode": 0,
+"compress/lossy_quality": 0.7,
+"compress/mode": 0,
+"compress/normal_map": 0,
+"detect_3d": true,
+"flags/anisotropic": false,
+"flags/filter": false,
+"flags/mipmaps": false,
+"flags/repeat": 0,
+"flags/srgb": 2,
+"process/HDR_as_SRGB": false,
+"process/fix_alpha_border": true,
+"process/invert_color": false,
+"process/normal_map_invert_y": false,
+"process/premult_alpha": false,
+"size_limit": 0,
+"stream": false,
+"svg/scale": 1.0
+}
+
+[input]
+
+ui_accept={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":32,"physical_keycode":0,"key_label":0,"unicode":32,"location":0,"echo":false,"script":null)
+, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"button_index":0,"pressure":0.0,"pressed":false,"script":null)
+]
+}
+ui_select={
+"deadzone": 0.5,
+"events": []
+}
+ui_cancel={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":4194305,"physical_keycode":0,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"button_index":6,"pressure":0.0,"pressed":false,"script":null)
+]
+}
+ui_left={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":65,"physical_keycode":0,"key_label":0,"unicode":97,"location":0,"echo":false,"script":null)
+, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":13,"pressure":0.0,"pressed":false,"script":null)
+, Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":-1,"axis":0,"axis_value":-1.0,"script":null)
+]
+}
+ui_right={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":68,"physical_keycode":0,"key_label":0,"unicode":100,"location":0,"echo":false,"script":null)
+, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":14,"pressure":0.0,"pressed":false,"script":null)
+, Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":-1,"axis":0,"axis_value":1.0,"script":null)
+]
+}
+ui_up={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":87,"physical_keycode":0,"key_label":0,"unicode":119,"location":0,"echo":false,"script":null)
+, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":11,"pressure":0.0,"pressed":false,"script":null)
+, Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":-1,"axis":1,"axis_value":-1.0,"script":null)
+]
+}
+ui_down={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":83,"physical_keycode":0,"key_label":0,"unicode":115,"location":0,"echo":false,"script":null)
+, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":12,"pressure":0.0,"pressed":false,"script":null)
+, Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":-1,"axis":1,"axis_value":1.0,"script":null)
+]
+}
+ui_page_up={
+"deadzone": 0.5,
+"events": []
+}
+ui_page_down={
+"deadzone": 0.5,
+"events": []
+}
+ui_home={
+"deadzone": 0.5,
+"events": []
+}
+ui_end={
+"deadzone": 0.5,
+"events": []
+}
+ui_cut={
+"deadzone": 0.5,
+"events": []
+}
+ui_copy={
+"deadzone": 0.5,
+"events": []
+}
+ui_paste={
+"deadzone": 0.5,
+"events": []
+}
+ui_undo={
+"deadzone": 0.5,
+"events": []
+}
+ui_redo={
+"deadzone": 0.5,
+"events": []
+}
+ui_text_completion_query={
+"deadzone": 0.5,
+"events": []
+}
+ui_text_completion_accept={
+"deadzone": 0.5,
+"events": []
+}
+ui_text_completion_replace={
+"deadzone": 0.5,
+"events": []
+}
+ui_text_newline={
+"deadzone": 0.5,
+"events": []
+}
+ui_text_newline_blank={
+"deadzone": 0.5,
+"events": []
+}
+ui_text_newline_above={
+"deadzone": 0.5,
+"events": []
+}
+ui_text_indent={
+"deadzone": 0.5,
+"events": []
+}
+ui_text_dedent={
+"deadzone": 0.5,
+"events": []
+}
+ui_text_backspace={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194308,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+]
+}
+ui_text_backspace_word={
+"deadzone": 0.5,
+"events": []
+}
+ui_text_backspace_word.macos={
+"deadzone": 0.5,
+"events": []
+}
+ui_text_backspace_all_to_left.macos={
+"deadzone": 0.5,
+"events": []
+}
+ui_text_delete={
+"deadzone": 0.5,
+"events": []
+}
+ui_text_delete_word={
+"deadzone": 0.5,
+"events": []
+}
+ui_text_delete_word.macos={
+"deadzone": 0.5,
+"events": []
+}
+ui_text_delete_all_to_right.macos={
+"deadzone": 0.5,
+"events": []
+}
+ui_text_caret_left={
+"deadzone": 0.5,
+"events": []
+}
+ui_text_caret_word_left={
+"deadzone": 0.5,
+"events": []
+}
+ui_text_caret_word_left.macos={
+"deadzone": 0.5,
+"events": []
+}
+ui_text_caret_right={
+"deadzone": 0.5,
+"events": []
+}
+ui_text_caret_word_right={
+"deadzone": 0.5,
+"events": []
+}
+ui_text_caret_word_right.macos={
+"deadzone": 0.5,
+"events": []
+}
+ui_text_caret_up={
+"deadzone": 0.5,
+"events": []
+}
+ui_text_caret_down={
+"deadzone": 0.5,
+"events": []
+}
+ui_text_caret_line_start={
+"deadzone": 0.5,
+"events": []
+}
+ui_text_caret_line_start.macos={
+"deadzone": 0.5,
+"events": []
+}
+ui_text_caret_line_end={
+"deadzone": 0.5,
+"events": []
+}
+ui_text_caret_line_end.macos={
+"deadzone": 0.5,
+"events": []
+}
+ui_text_caret_page_up={
+"deadzone": 0.5,
+"events": []
+}
+ui_text_caret_page_down={
+"deadzone": 0.5,
+"events": []
+}
+ui_text_caret_document_start={
+"deadzone": 0.5,
+"events": []
+}
+ui_text_caret_document_start.macos={
+"deadzone": 0.5,
+"events": []
+}
+ui_text_caret_document_end={
+"deadzone": 0.5,
+"events": []
+}
+ui_text_caret_document_end.macos={
+"deadzone": 0.5,
+"events": []
+}
+ui_text_caret_add_below={
+"deadzone": 0.5,
+"events": []
+}
+ui_text_caret_add_below.macos={
+"deadzone": 0.5,
+"events": []
+}
+ui_text_caret_add_above={
+"deadzone": 0.5,
+"events": []
+}
+ui_text_caret_add_above.macos={
+"deadzone": 0.5,
+"events": []
+}
+ui_text_scroll_up={
+"deadzone": 0.5,
+"events": []
+}
+ui_text_scroll_up.macos={
+"deadzone": 0.5,
+"events": []
+}
+ui_text_scroll_down={
+"deadzone": 0.5,
+"events": []
+}
+ui_text_scroll_down.macos={
+"deadzone": 0.5,
+"events": []
+}
+ui_text_select_all={
+"deadzone": 0.5,
+"events": []
+}
+ui_text_select_word_under_caret={
+"deadzone": 0.5,
+"events": []
+}
+ui_text_select_word_under_caret.macos={
+"deadzone": 0.5,
+"events": []
+}
+ui_text_add_selection_for_next_occurrence={
+"deadzone": 0.5,
+"events": []
+}
+ui_text_clear_carets_and_selection={
+"deadzone": 0.5,
+"events": []
+}
+ui_text_toggle_insert_mode={
+"deadzone": 0.5,
+"events": []
+}
+ui_menu={
+"deadzone": 0.5,
+"events": []
+}
+ui_text_submit={
+"deadzone": 0.5,
+"events": []
+}
+ui_graph_duplicate={
+"deadzone": 0.5,
+"events": []
+}
+ui_graph_delete={
+"deadzone": 0.5,
+"events": []
+}
+ui_filedialog_up_one_level={
+"deadzone": 0.5,
+"events": []
+}
+ui_filedialog_refresh={
+"deadzone": 0.5,
+"events": []
+}
+ui_filedialog_show_hidden={
+"deadzone": 0.5,
+"events": []
+}
+ui_swap_input_direction={
+"deadzone": 0.5,
+"events": []
+}
+debug_toggle_menu={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":81,"key_label":0,"unicode":81,"location":0,"echo":false,"script":null)
+, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"button_index":9,"pressure":0.0,"pressed":false,"script":null)
+]
+}
+debug_screenshot={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":80,"key_label":0,"unicode":112,"location":0,"echo":false,"script":null)
+]
+}
+show_upgrades={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":69,"key_label":0,"unicode":101,"location":0,"echo":false,"script":null)
+, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"button_index":3,"pressure":0.0,"pressed":true,"script":null)
+]
+}
+cycle_debug_menu={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194334,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"button_index":10,"pressure":0.0,"pressed":false,"script":null)
+]
+}
+demo_die={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":82,"key_label":0,"unicode":114,"location":0,"echo":false,"script":null)
+]
+}
+debug_toggle_camera_zoom={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194309,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+]
+}
+go_back={
+"deadzone": 0.5,
+"events": [Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"button_index":1,"pressure":0.0,"pressed":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194305,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+]
+}
+restart={
+"deadzone": 0.2,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":82,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+, Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":-1,"axis":5,"axis_value":1.0,"script":null)
+]
+}
+
+[layer_names]
+
+2d_physics/layer_1="player"
+2d_physics/layer_2="enemy"
+2d_physics/layer_3="weapon"
+2d_physics/layer_4="melee_enemies"
+2d_physics/layer_5="wall"
+2d_physics/layer_6="enemy_wall"
+2d_physics/layer_7="weapon_body"
+
+[physics]
+
+common/enable_pause_aware_picking=true
+
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
+textures/vram_compression/import_etc2_astc=true
+viewport/hdr_2d=true
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+
+[shader_globals]
+
+outline_shader_enabled={
+"type": "float",
+"value": 1.0
+}
+shader_time={
+"type": "float",
+"value": 0.0
+}
