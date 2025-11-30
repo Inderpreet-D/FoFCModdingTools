@@ -14,6 +14,7 @@ config/name="Modding Tools"
 config/version="1.0.0"
 run/main_scene="res://ui/screens/splash/Splash.tscn"
 config/use_custom_user_dir=true
+config/custom_user_dir_name="Founder of the Final Cult"
 config/features=PackedStringArray("4.5")
 boot_splash/bg_color=Color(0, 0, 0, 1)
 boot_splash/show_image=false
