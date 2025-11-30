@@ -8,6 +8,13 @@ Founder of the Final Cult can load any .zip files that it finds in its mods fold
 
 ## Creating Mods
 
+Prerequisites
+
+- a copy of Founder of the Final Cult
+- Clone this repository
+- Godot RE Tools, available at https://github.com/GDRETools/gdsdecomp
+- Decompile the .exe file of the game, "Cult Survivors.exe", into this repository, you should see a bunch of folders on the same level as this README file
+
 Mod contents for a mod called "ExampleMod" should be organized as follows:
 
 1. All files should be contained in a folder called ExampleMod
