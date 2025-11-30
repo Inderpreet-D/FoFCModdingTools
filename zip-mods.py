@@ -39,6 +39,9 @@ def main():
       # Use zip command on Linux and macOS
       subprocess.run(["zip", "-r", f"{mod_dir}.zip", mod_dir])
     
+    # Ensure destination directory exists
+    os.makedirs(dest, exist_ok=True)
+
     # Delete existing zip at destination if it exists
     if os.path.exists(f"{dest}{mod_dir}.zip"):
       os.remove(f"{dest}{mod_dir}.zip")
