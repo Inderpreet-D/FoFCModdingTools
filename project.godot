@@ -10,8 +10,8 @@ config_version=5
 
 [application]
 
-config/name="Founder of the Final Cult"
-config/version="0.29.0.0"
+config/name="Modding Tools"
+config/version="1.0.0"
 run/main_scene="res://ui/screens/splash/Splash.tscn"
 config/use_custom_user_dir=true
 config/features=PackedStringArray("4.5")
