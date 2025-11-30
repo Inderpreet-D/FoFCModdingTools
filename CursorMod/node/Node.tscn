@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://drokl475ve2ls"]
+
+[ext_resource type="Script" uid="uid://c1xb7snmggo3q" path="res://CursorMod/node/Node.gd" id="1_f0y8e"]
+[ext_resource type="PackedScene" uid="uid://bo7ik27x4615k" path="res://utils/pausable_timer/PausableTimer.tscn" id="2_gsmr2"]
+
+[node name="Node" type="Node"]
+process_mode = 3
+script = ExtResource("1_f0y8e")
+
+[node name="PausableTimer" parent="." instance=ExtResource("2_gsmr2")]
+unique_name_in_owner = true
+delay = 3.0
+
+[connection signal="timeout" from="PausableTimer" to="." method="_on_pausable_timer_timeout"]
