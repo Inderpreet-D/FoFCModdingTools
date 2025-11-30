@@ -3,6 +3,7 @@ import platform
 import shutil
 import os
 import subprocess
+import time
 
 
 WINDOWS_DEST = "%APPDATA%\\Founder of the Final Cult\\mods\\"
@@ -53,6 +54,7 @@ def main(mod_dirs: list[str]) -> None:
     print(f"Created zip archive at {dest}{mod_dir}.zip")
     if i < len(mod_dirs) - 1:
       print("")
+      time.sleep(0.5)
 
 
 if __name__ == "__main__":
