@@ -57,3 +57,11 @@ Mods can be shared through the Discord server for now. You can join the server f
 2. What do I need to know to make a mod?
 
 - Some scripting knowledge and understanding of Godot is required, but it is a very user friendly game engine and you can always use the included example mods as a starting point.
+
+3. What do I do if an error is preventing me from getting to the main menu and disabling a mod?
+
+- Got to the data folder for this game and edit the modlist.json file to disable the mod that is causing the error
+- The data folder can be found in the following locations based on what operating system you are using:
+  - Windows: `%APPDATA%\Founder of the Final Cult`
+  - MacOS: `~/Library/Application Support/Founder of the Final Cult`
+  - Linux: `~/.local/share/Founder of the Final Cult`
