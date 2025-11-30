@@ -10,11 +10,13 @@ LINUX_DEST = "~/.local/share/Founder of the Final Cult/mods/"
 MAC_DEST = "~/Library/Application Support/Founder of the Final Cult/mods/"
 
 
-def main():
-  if len(sys.argv) < 2:
+def main(mod_dirs: list[str]) -> None:
+  if len(mod_dirs) < 1:
     print("Usage: zip-mods.py <mod-directory-1, mod-directory-2, ...>")
     return
   
+  print("Zipping mods...", mod_dirs, "\n")
+
   system = platform.system()
   if system == "Windows":
     dest = WINDOWS_DEST
@@ -27,7 +29,6 @@ def main():
     return
 
   # Create zip archives for each mod directory
-  mod_dirs = sys.argv[1:]
   for i in range(len(mod_dirs)):
     mod_dir = mod_dirs[i]
     print(f"Zipping mod directory: {mod_dir}")
@@ -55,4 +56,9 @@ def main():
 
 
 if __name__ == "__main__":
-  main()
+  files: list[str] = sys.argv[1:]
+
+  if len(files) == 0:
+    files = sys.stdin.read().splitlines()
+  
+  main(files)
