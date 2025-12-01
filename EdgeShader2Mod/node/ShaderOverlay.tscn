@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://d0dwrsx0mmww1"]
+
+[ext_resource type="Texture2D" uid="uid://c1kl5xtfoscua" path="res://assets/sprites/ui/studio_icon.png" id="1_g4ol3"]
+[ext_resource type="Shader" uid="uid://bf5re8ab6aril" path="res://EdgeShader2Mod/node/ShaderOverlay.gdshader" id="2_cpkio"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lgtrj"]
+shader = ExtResource("2_cpkio")
+shader_parameter/add = 0.00069999998229
+shader_parameter/threshold = 0.00400000019
+shader_parameter/threshold2 = 0.0
+shader_parameter/edgeColour = Color(1, 1, 1, 1)
+shader_parameter/edgeColour2 = Color(0, 0.8828125, 1, 1)
+shader_parameter/nonEdgeColour = Color(0, 0, 0, 1)
+
+[node name="EdgeShader2Overlay" type="CanvasLayer"]
+layer = 10
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(462, 352)
+texture = ExtResource("1_g4ol3")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_lgtrj")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
