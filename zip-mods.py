@@ -36,8 +36,8 @@ def main(mod_dirs: list[str]) -> None:
     print(f"Zipping mod directory: {mod_dir}")
 
     if system == "Windows":
-      # Use PowerShell Compress-Archive cmdlet on Windows
-      subprocess.run(["powershell", "Compress-Archive", "-Path", f"./{mod_dir}", "-DestinationPath", f"./{mod_dir}.zip"])
+      # Use tar command on Windows
+      subprocess.run(["tar", "-a", "-c", "-f", f"{mod_dir}.zip", mod_dir])
     else:
       # Use zip command on Linux and macOS
       subprocess.run(["zip", "-r", f"{mod_dir}.zip", mod_dir])
