@@ -16,11 +16,12 @@ def main(mod_dirs: list[str]) -> None:
     print("Usage: zip-mods.py <mod-directory-1, mod-directory-2, ...>")
     return
   
+  mod_dirs = [mod_dir.rstrip("/\\") for mod_dir in mod_dirs]
   print("Zipping mods...", mod_dirs, "\n")
 
   system = platform.system()
   if system == "Windows":
-    dest = WINDOWS_DEST
+    dest = os.path.expandvars(WINDOWS_DEST)
   elif system == "Linux":
     dest = os.path.expanduser(LINUX_DEST)
   elif system == "Darwin":
@@ -36,7 +37,7 @@ def main(mod_dirs: list[str]) -> None:
 
     if system == "Windows":
       # Use PowerShell Compress-Archive cmdlet on Windows
-      subprocess.run(["powershell", "Compress-Archive", "-Path", mod_dir, "-DestinationPath", f"{mod_dir}.zip"])
+      subprocess.run(["powershell", "Compress-Archive", "-Path", f"./{mod_dir}", "-DestinationPath", f"./{mod_dir}.zip"])
     else:
       # Use zip command on Linux and macOS
       subprocess.run(["zip", "-r", f"{mod_dir}.zip", mod_dir])
