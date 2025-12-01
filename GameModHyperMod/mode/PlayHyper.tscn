@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://x5nhqbqy8kcs"]
+
+[ext_resource type="PackedScene" uid="uid://dxwiv800c2ytx" path="res://ui/screens/play/base/PlayBase.tscn" id="1_skw63"]
+[ext_resource type="Script" uid="uid://bte5v4drmkn5s" path="res://GameModHyperMod/mode/PlayHyper.gd" id="2_ycd4t"]
+
+[node name="PlayHyper" instance=ExtResource("1_skw63")]
+script = ExtResource("2_ycd4t")
+
+[node name="UpgradeNotification" parent="HUD" index="1"]
+anchors_preset = 7
+
+[editable path="HUD"]
