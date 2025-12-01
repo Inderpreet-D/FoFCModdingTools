@@ -55,6 +55,8 @@ def main(mod_dirs: list[str]) -> None:
     if i < len(mod_dirs) - 1:
       print("")
       time.sleep(0.5)
+  
+  print(f"\nZipped {len(mod_dirs)} mods successfully.\n" + ", ".join(mod_dirs))
 
 
 if __name__ == "__main__":
