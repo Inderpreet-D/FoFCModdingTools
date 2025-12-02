@@ -5,13 +5,13 @@ func init_mod() -> void:
     print("Init level mod")
     
     var def: LevelDef = LevelDef.new({
-        "description": "The swamp level.",
+        "description": "The poison swamp level.",
         "icon": "res://LevelMod/level-swamp.png",
         "key": "swamp",
-        "level_path": "res://LevelMod/Level.tscn",
+        "level_path": "res://LevelMod/level/Level.tscn",
         "map": {
             "focus": ["top"],
-            "icon": "res://LevelMod/swamp.png",
+            "icon": "res://LevelMod/map-swamp.png",
             "position": {
                 "x": 25,
                 "y": 470

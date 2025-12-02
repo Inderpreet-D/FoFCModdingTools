@@ -1,0 +1,35 @@
+[gd_scene load_steps=8 format=3 uid="uid://dl8l8lao8tkj1"]
+
+[ext_resource type="Script" uid="uid://baeyawqtv3uh0" path="res://LevelMod/poison/Poison.gd" id="1_jecoe"]
+[ext_resource type="Shader" uid="uid://cmi8vts26qotf" path="res://LevelMod/poison/Poison.gdshader" id="2_op1qx"]
+[ext_resource type="Texture2D" uid="uid://c6a375w0qarjv" path="res://assets/sprites/level/desert/FD_Desert.png" id="3_35gwx"]
+[ext_resource type="PackedScene" uid="uid://bo7ik27x4615k" path="res://utils/pausable_timer/PausableTimer.tscn" id="4_pvdl4"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7ahot"]
+shader = ExtResource("2_op1qx")
+shader_parameter/tone = Color(0.5686275, 1, 0, 1)
+shader_parameter/speed_1 = Vector2(0, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k7s31"]
+atlas = ExtResource("3_35gwx")
+region = Rect2(166, 614, 84, 84)
+filter_clip = true
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3vivv"]
+size = Vector2(60, 60)
+
+[node name="Poison" type="Node2D"]
+script = ExtResource("1_jecoe")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_7ahot")
+texture = SubResource("AtlasTexture_k7s31")
+region_rect = Rect2(166, 614, 84, 84)
+
+[node name="ShapeCast2D" type="ShapeCast2D" parent="."]
+visible = false
+shape = SubResource("RectangleShape2D_3vivv")
+target_position = Vector2(0, 0)
+collision_mask = 3
+
+[node name="PausableTimer" parent="." instance=ExtResource("4_pvdl4")]
