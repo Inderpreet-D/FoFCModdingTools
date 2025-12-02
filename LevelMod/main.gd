@@ -10,7 +10,7 @@ func init_mod() -> void:
         "key": "swamp",
         "level_path": "res://LevelMod/level/Level.tscn",
         "map": {
-            "focus": ["top"],
+            "focus": ["left"],
             "icon": "res://LevelMod/map-swamp.png",
             "position": {
                 "x": 25,
