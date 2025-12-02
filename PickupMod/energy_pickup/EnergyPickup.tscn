@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://bigeeujh83fik"]
+
+[ext_resource type="PackedScene" uid="uid://25vwh0m67k2e" path="res://pickups/base/Pickup.tscn" id="1_pk1nr"]
+[ext_resource type="Script" uid="uid://3a7lp70x8gsh" path="res://PickupMod/energy_pickup/EnergyPickup.gd" id="2_6ltmj"]
+[ext_resource type="Texture2D" uid="uid://bm60yh72ubwt8" path="res://assets/sprites/boss/weeb_cosplayer/cosplay-3-weapon.png" id="3_a8jlw"]
+
+[node name="EnergyPickup" instance=ExtResource("1_pk1nr")]
+script = ExtResource("2_6ltmj")
+value = 1.0
+speed = 500.0
+catch_squared_distance = 16.0
+
+[node name="Sprite2D" parent="." index="0"]
+unique_name_in_owner = true
+scale = Vector2(1.16, 0.46)
+texture = ExtResource("3_a8jlw")
+
+[node name="PointLight2D" parent="Sprite2D" index="0"]
+scale = Vector2(0.862, 2.174)
