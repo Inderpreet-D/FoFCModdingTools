@@ -20,4 +20,4 @@ func init_mod() -> void:
         "title": "Swamp"
     })
     
-    DefHandler.levels.set(def._key, def)
+    DefHandler.add_level(def)

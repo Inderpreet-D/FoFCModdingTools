@@ -18,7 +18,7 @@ func init_mod() -> void:
     })
     
     # Add new background
-    DefHandler.backgrounds.set(def._key, def)
+    DefHandler.add_background(def)
     
     # Register FlashbangerBackground class, just based on path
     ClassRegistry.register("FlashbangerBackground", "res://BackgroundMod/FlashbangerBackground.gd")

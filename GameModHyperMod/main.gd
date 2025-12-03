@@ -13,4 +13,4 @@ func init_mod() -> void:
     })
     
     # Add new game mode
-    DefHandler.game_modes.set(def._key, def)
+    DefHandler.add_game_mode(def)

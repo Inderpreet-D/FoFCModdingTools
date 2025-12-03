@@ -10,7 +10,7 @@ func init_mod() -> void:
         "key": "DamageAuraPassive",
         "title": "Damage Aura"
     })
-    DefHandler.passives.set(passive_def._key, passive_def)
+    DefHandler.add_passive(passive_def)
     ClassRegistry.register("DamageAuraPassive", "res://PassiveMod/damage_aura_passive/DamageAuraPassive.gd")
     
     var boss_passive_def: PassiveDef = PassiveDef.new({
@@ -19,5 +19,5 @@ func init_mod() -> void:
         "key": "BossWorldPassive",
         "title": "The World"
     })
-    DefHandler.boss_passives.set(boss_passive_def._key, boss_passive_def)
+    DefHandler.add_boss_passive(boss_passive_def)
     ClassRegistry.register("BossWorldPassive", "res://PassiveMod/boss_world_passive/BossWorldPassive.gd")
