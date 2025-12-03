@@ -1,0 +1,22 @@
+[gd_scene load_steps=6 format=3 uid="uid://cmgwwa380rt6n"]
+
+[ext_resource type="Shader" uid="uid://b7gq8flxsciot" path="res://shaders/Explosion.gdshader" id="1_wbtc8"]
+[ext_resource type="Texture2D" uid="uid://hj8b30038hxv" path="res://PassiveMod/damage_aura_passive/sprite.png" id="1_yh2tp"]
+[ext_resource type="Script" uid="uid://bdgqgo5dgymmb" path="res://PassiveMod/damage_aura_passive/Aura.gd" id="2_wbtc8"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_aeuas"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_uxlxa"]
+shader = ExtResource("1_wbtc8")
+shader_parameter/noise = SubResource("NoiseTexture2D_aeuas")
+shader_parameter/x_scroll = 1.0
+shader_parameter/y_scroll = 1.0
+shader_parameter/zoom = 1.81
+shader_parameter/repeat = 3.0
+shader_parameter/tone_color = Color(0.984375, 0.984375, 0.984375, 1)
+
+[node name="Aura" type="Sprite2D"]
+material = SubResource("ShaderMaterial_uxlxa")
+scale = Vector2(9.375, 9.375)
+texture = ExtResource("1_yh2tp")
+script = ExtResource("2_wbtc8")

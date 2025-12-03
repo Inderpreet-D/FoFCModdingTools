@@ -12,7 +12,7 @@ func reset() -> void :
 func on_pickup() -> void :
     super.on_pickup()
     
-    prints("Picked up energy")
+    print("Picked up energy")
     
     for player: Player in Utilities.get_all_players():
         for weapon: Weapon in player.get_weapon_nodes():

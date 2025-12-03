@@ -5,7 +5,7 @@ const ENERGY_KEY: String = "energy_pickup"
 
 
 func init_mod() -> void:
-    prints("Init pickup mod")
+    print("Init pickup mod")
     
     NodePool.scenes[ENERGY_KEY] = load("res://PickupMod/energy_pickup/EnergyPickup.tscn")
     
