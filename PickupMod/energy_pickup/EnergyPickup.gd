@@ -15,7 +15,8 @@ func on_pickup() -> void :
     print("Picked up energy")
     
     for player: Player in Utilities.get_all_players():
-        for weapon: Weapon in player.get_weapon_nodes():
-            for _i: int in 10:
+        for _i: int in 10:
+            for weapon: Weapon in player.get_weapon_nodes():
                 weapon.attack()
-                await Utilities.wait(0.1)
+            
+            await Utilities.wait(0.1)
