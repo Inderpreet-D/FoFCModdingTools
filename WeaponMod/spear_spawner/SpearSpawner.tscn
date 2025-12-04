@@ -18,7 +18,6 @@ shader_parameter/number_of_images = Vector2(4, 1)
 script = ExtResource("2_mwfop")
 
 [node name="Sprite2D" parent="Marker2D" index="0"]
-unique_name_in_owner = true
 material = SubResource("ShaderMaterial_rkpud")
 scale = Vector2(5.65, 3)
 texture = ExtResource("4_74umv")

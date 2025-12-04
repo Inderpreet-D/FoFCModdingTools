@@ -31,9 +31,9 @@ func physics_process(delta: float) -> void:
         down_mult += down_acc * delta
     else:
         if is_left:
-            direction = direction.rotated(ORBIT_ANGLE * delta)
-        else:
             direction = direction.rotated(-ORBIT_ANGLE * delta)
+        else:
+            direction = direction.rotated(ORBIT_ANGLE * delta)
 
     velocity = direction.normalized() * speed
     move_and_slide()

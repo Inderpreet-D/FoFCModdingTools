@@ -1,9 +1,6 @@
 extends Weapon
 
 
-@onready var sprite_2d: Sprite2D = %Sprite2D
-
-
 var should_orbit: bool = false
 
 
@@ -25,7 +22,7 @@ func create_bullet() -> void :
     @warning_ignore("unsafe_property_access")
     spear.should_orbit = should_orbit
 
-    if sprite_2d.flip_h:
+    if scale.x > 0:
         spear.direction = Vector2.RIGHT.rotated(-PI / 4)
         @warning_ignore("unsafe_property_access")
         spear.is_left = false

@@ -9,20 +9,19 @@ func init_mod() -> void:
             "Throw a spear",
             {
                 "base": {
-                    "damage": 5
+                    "damage": 5.0
                 },
                 "tags": []
             },
             {
                 "base": {
-                    "delay": 6
+                    "delay": 2.0
                 },
                 "tags": []
             },
             {
                 "base": {
-                    "damage": 7,
-                    "delay": 8,
+                    "delay": 12.0
                 },
                 "tags": []
             }
@@ -31,18 +30,18 @@ func init_mod() -> void:
         "key": "spear",
         "level_deltas": [
             {
-                "damage": 19.0,
-                "delay": 1.0,
+                "damage": 10.0,
+                "delay": 2.0,
                 "added_tags": ["Throwing", "LongRange", "SingleShot"]
             },
             {
-                "damage": 20.0
+                "damage": 15.0
             },
             {
                 "delay": 4.0
             },
             {
-                "delay": 12.0,
+                "delay": 16.0,
             }
         ],
         "scene": "res://WeaponMod/spear_spawner/SpearSpawner.tscn",
