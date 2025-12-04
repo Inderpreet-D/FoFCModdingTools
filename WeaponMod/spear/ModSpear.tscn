@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://d0vwbvase3jpq"]
+
+[ext_resource type="PackedScene" uid="uid://8hxdi54cxgra" path="res://weapons/pistol_spawner/bullet/Bullet.tscn" id="1_08r7t"]
+[ext_resource type="Script" uid="uid://bqx34t68adkie" path="res://WeaponMod/spear/ModSpear.gd" id="2_yntom"]
+[ext_resource type="Texture2D" uid="uid://b4jh7j16anhu7" path="res://assets/sprites/enemy/aztec/aztec-spear-projectile.png" id="3_aqhgq"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_s2gum"]
+radius = 8.0
+
+[node name="ModSpear" instance=ExtResource("1_08r7t")]
+scale = Vector2(2, 2)
+script = ExtResource("2_yntom")
+behaviour = 5
+speed = 250.0
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("3_aqhgq")
+
+[node name="DamageBox" parent="Area2D" index="0"]
+shape = SubResource("CircleShape2D_s2gum")
+
+[node name="VisibleOnScreenNotifier2D" parent="." index="3"]
+rect = Rect2(-6.25, -20.434782, 12.5, 32.173912)

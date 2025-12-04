@@ -1,0 +1,26 @@
+[gd_scene load_steps=6 format=3 uid="uid://bnt6ojbyv0rgc"]
+
+[ext_resource type="PackedScene" uid="uid://cesqichyoyd7a" path="res://weapons/base/weapon/Weapon.tscn" id="1_u5bcp"]
+[ext_resource type="Script" uid="uid://bp82nm7g0ts1u" path="res://WeaponMod/spear_spawner/SpearSpawner.gd" id="2_mwfop"]
+[ext_resource type="Shader" uid="uid://badrwf50t1gdb" path="res://shaders/Outline.gdshader" id="3_418n7"]
+[ext_resource type="Texture2D" uid="uid://sgmrcaygg712" path="res://assets/sprites/enemy/aztec/aztec-spear.png" id="4_74umv"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rkpud"]
+shader = ExtResource("3_418n7")
+shader_parameter/color = Color(0, 2, 2, 1)
+shader_parameter/width = 1.0
+shader_parameter/pattern = 0
+shader_parameter/inside = false
+shader_parameter/add_margins = true
+shader_parameter/number_of_images = Vector2(4, 1)
+
+[node name="SpearSpawner" instance=ExtResource("1_u5bcp")]
+script = ExtResource("2_mwfop")
+
+[node name="Sprite2D" parent="Marker2D" index="0"]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_rkpud")
+scale = Vector2(5.65, 3)
+texture = ExtResource("4_74umv")
+region_enabled = true
+region_rect = Rect2(0, 0, 7, 26)
