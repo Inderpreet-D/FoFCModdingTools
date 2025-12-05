@@ -36,13 +36,7 @@ func init_mod() -> void:
     
     EventBus.player_spawned.connect(func(player: Player) -> void:
         var size_mult: float = ShopData.get_upgrade("size-multiplier")
-        print("size mult %.2f" % size_mult)
-        
         var size_mult_down: float = ShopData.get_upgrade("size-multiplier-down")
-        print("size mult down %.2f" % size_mult_down)
-        
         var total_size_mult: float = size_mult * size_mult_down
-        print("Spawned player at size mult %.2f" % total_size_mult)
-        
         player.scale *= total_size_mult
     )
