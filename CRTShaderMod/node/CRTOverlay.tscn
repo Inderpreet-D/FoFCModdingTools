@@ -1,10 +1,10 @@
 [gd_scene load_steps=4 format=3 uid="uid://bsarrayth7rae"]
 
-[ext_resource type="Texture2D" uid="uid://c1kl5xtfoscua" path="res://assets/sprites/ui/studio_icon.png" id="1_ga1tp"]
-[ext_resource type="Shader" uid="uid://6hvkm8ras4px" path="res://CRTShaderMod/node/CRTShader.gdshader" id="2_kykff"]
+[ext_resource type="Texture2D" uid="uid://c1kl5xtfoscua" path="res://assets/sprites/ui/studio_icon.png" id="1_tv7tl"]
+[ext_resource type="Shader" uid="uid://6hvkm8ras4px" path="res://CRTShaderMod/node/CRT.gdshader" id="2_l2ilf"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_lgtrj"]
-shader = ExtResource("2_kykff")
+shader = ExtResource("2_l2ilf")
 shader_parameter/resolution = Vector2(800, 450)
 shader_parameter/scan_line_amount = 0.34000001615
 shader_parameter/warp_amount = 0.0
@@ -20,14 +20,14 @@ shader_parameter/roll_speed = -8.0
 shader_parameter/scan_line_strength = -2.2749995380625005
 shader_parameter/pixel_strength = -0.6559998411599999
 
-[node name="CRTShaderOverlay" type="CanvasLayer"]
+[node name="CRTOverlay" type="CanvasLayer"]
 layer = 10
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(797.49994, 447)
 scale = Vector2(6.1757813, 3.4765627)
-texture = ExtResource("1_ga1tp")
+texture = ExtResource("1_tv7tl")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_lgtrj")

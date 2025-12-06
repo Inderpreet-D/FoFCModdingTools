@@ -1,11 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://dok0nrngk16j6"]
+[gd_scene load_steps=3 format=3 uid="uid://bi5dgyhb0tmae"]
 
-[ext_resource type="Shader" uid="uid://cbtmnh11wefno" path="res://InvertShaderMod/node/ShaderOverlay.gdshader" id="1_oxa6m"]
+[ext_resource type="Shader" uid="uid://cbtmnh11wefno" path="res://InvertShaderMod/node/Invert.gdshader" id="1_oxa6m"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_oxa6m"]
 shader = ExtResource("1_oxa6m")
 
-[node name="InvertShaderOverlay" type="CanvasLayer"]
+[node name="InvertOverlay" type="CanvasLayer"]
 layer = 10
 
 [node name="ColorRect" type="ColorRect" parent="."]

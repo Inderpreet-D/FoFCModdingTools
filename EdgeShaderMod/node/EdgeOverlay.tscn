@@ -1,13 +1,13 @@
 [gd_scene load_steps=3 format=3 uid="uid://tj2tblepexgs"]
 
-[ext_resource type="Shader" uid="uid://b12k2l6u0jbun" path="res://EdgeShaderMod/node/EdgeShader.gdshader" id="1_67nxb"]
+[ext_resource type="Shader" uid="uid://b12k2l6u0jbun" path="res://EdgeShaderMod/node/Edge.gdshader" id="1_67nxb"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_4ysqd"]
 shader = ExtResource("1_67nxb")
 shader_parameter/diff = 0.06999999843536
 shader_parameter/diff_div = 60.0
 
-[node name="InvertShaderOverlay" type="CanvasLayer"]
+[node name="EdgeOverlay" type="CanvasLayer"]
 layer = 10
 
 [node name="ColorRect" type="ColorRect" parent="."]
