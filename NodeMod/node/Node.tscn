@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://wdscrbbrnmi2"]
+[gd_scene load_steps=3 format=3 uid="uid://bymqcqlklw33k"]
 
 [ext_resource type="Script" uid="uid://b0fqw8erxsy56" path="res://NodeMod/node/Node.gd" id="1_3xei4"]
 [ext_resource type="Texture2D" uid="uid://ch001leo6otqo" path="res://assets/sprites/ui/game_mode/game_mode_normal.png" id="2_470o3"]
