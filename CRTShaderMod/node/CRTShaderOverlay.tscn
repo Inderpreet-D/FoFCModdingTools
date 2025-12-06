@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bsarrayth7rae"]
 
 [ext_resource type="Texture2D" uid="uid://c1kl5xtfoscua" path="res://assets/sprites/ui/studio_icon.png" id="1_ga1tp"]
-[ext_resource type="Shader" uid="uid://6hvkm8ras4px" path="res://CRTShaderMod/node/ShaderOverlay.gdshader" id="2_kykff"]
+[ext_resource type="Shader" uid="uid://6hvkm8ras4px" path="res://CRTShaderMod/node/CRTShader.gdshader" id="2_kykff"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_lgtrj"]
 shader = ExtResource("2_kykff")
