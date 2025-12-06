@@ -5,13 +5,13 @@ shader_type canvas_item;
 // A shader by The Gingerjam, thanks al1-ce for their rgb2hsv and hsv2rgb code: https://godotshaders.com/shader/hsv-adjustment/, the rest is by me
 // You can also detect edges by hue or saturation by changing all .z in line 37 and 39 to .x or .y
 
-uniform sampler2D screen_texture : hint_screen_texture, repeat_disable, filter_nearest;
-uniform float add : hint_range(0.0, 0.002, 0.0001);
-uniform float threshold : hint_range(0.0, 1.0, 0.001);
-uniform float threshold2 : hint_range(0.0, 1.0, 0.001);
-uniform vec4 edgeColour : source_color;
-uniform vec4 edgeColour2 : source_color;
-uniform vec4 nonEdgeColour : source_color;
+uniform sampler2D screen_texture: hint_screen_texture, repeat_disable, filter_nearest;
+uniform float add: hint_range(0.0, 0.002, 0.0001);
+uniform float threshold: hint_range(0.0, 1.0, 0.001);
+uniform float threshold2: hint_range(0.0, 1.0, 0.001);
+uniform vec4 edgeColour: source_color;
+uniform vec4 edgeColour2: source_color;
+uniform vec4 nonEdgeColour: source_color;
 
 vec3 rgb2hsv(vec3 c) {
 	vec4 K = vec4(0.0, -1.0 / 3.0, 2.0 / 3.0, -1.0);

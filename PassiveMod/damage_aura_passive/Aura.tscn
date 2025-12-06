@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://cmgwwa380rt6n"]
+[gd_scene load_steps=6 format=3 uid="uid://cria3q4ah3av"]
 
 [ext_resource type="Shader" uid="uid://b7gq8flxsciot" path="res://shaders/Explosion.gdshader" id="1_wbtc8"]
 [ext_resource type="Texture2D" uid="uid://hj8b30038hxv" path="res://PassiveMod/damage_aura_passive/sprite.png" id="1_yh2tp"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://sdotshj38v2i"]
+[gd_scene load_steps=11 format=3 uid="uid://b8urdcki5ovxp"]
 
 [ext_resource type="Script" uid="uid://dpyceflnjwcb4" path="res://PassiveMod/boss_world_passive/stop_node/StopNode.gd" id="1_usbbs"]
 [ext_resource type="Texture2D" uid="uid://dghgeav501wk7" path="res://PassiveMod/boss_world_passive/stop_node/area.png" id="2_lpc3m"]

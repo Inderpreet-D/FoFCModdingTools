@@ -1,13 +1,13 @@
 class_name EMPShield extends Shield
 
 
-func _init() -> void :
+func _init() -> void:
     type = "EMPShield"
 
     super._init(ShieldStat._2)
 
 
-func on_break() -> void :
+func on_break() -> void:
     super.on_break()
     
     # Async func that will be called and done after the shield is un-equipped

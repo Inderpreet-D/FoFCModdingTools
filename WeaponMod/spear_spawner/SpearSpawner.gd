@@ -4,7 +4,7 @@ extends Weapon
 var should_orbit: bool = false
 
 
-func on_variant_selected() -> void :
+func on_variant_selected() -> void:
     super.on_variant_selected()
 
     match variant:
@@ -14,7 +14,7 @@ func on_variant_selected() -> void :
             should_orbit = true
 
 
-func create_bullet() -> void :
+func create_bullet() -> void:
     var spear: Bullet = NodePool.create_node("ModSpear")
     spear.damage = damage
     spear.global_position = global_position
@@ -34,7 +34,7 @@ func create_bullet() -> void :
     add_bullet(spear)
 
 
-func attack() -> void :
+func attack() -> void:
     super.attack()
 
     for i: int in shot_count:

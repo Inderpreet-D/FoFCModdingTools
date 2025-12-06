@@ -1,7 +1,7 @@
 extends Pickup
 
 
-func reset() -> void :
+func reset() -> void:
     super.reset()
 
     value = 1.0
@@ -9,7 +9,7 @@ func reset() -> void :
     catch_squared_distance = 16.0
 
 
-func on_pickup() -> void :
+func on_pickup() -> void:
     super.on_pickup()
     
     print("Picked up energy")

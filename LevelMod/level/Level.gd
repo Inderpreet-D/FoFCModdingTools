@@ -2,7 +2,7 @@ extends Level
 
 
 # Sets waves for a level
-func _update_config_waves(config: LevelConfig) -> void :
+func _update_config_waves(config: LevelConfig) -> void:
     # Each element of these refers to a key of the NodePool
     const pool_1: Array[String] = [
         "Slime", # Added custom enemy
@@ -52,7 +52,7 @@ func _update_config_waves(config: LevelConfig) -> void :
 
 
 # Called when the level is first being setup
-func _update_config(config: LevelConfig) -> void :
+func _update_config(config: LevelConfig) -> void:
     super._update_config(config)
     
     # Sets waves for a level
