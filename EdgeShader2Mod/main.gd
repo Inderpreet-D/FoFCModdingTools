@@ -2,9 +2,9 @@ extends BaseMod
 
 
 func init_mod() -> void:
-	print("Init edge shader, second version")
-	
-	# Add overlay to scene
-	var scene: PackedScene = load("res://EdgeShader2Mod/node/EdgeShaderOverlay.tscn")
-	var instance: CanvasLayer = scene.instantiate()
-	ModLoader.add_child(instance)
+    print("Init edge shader mod, second version")
+    
+    # Add overlay to scene
+    var scene: PackedScene = load("res://EdgeShader2Mod/node/EdgeShaderOverlay.tscn")
+    var instance: CanvasLayer = scene.instantiate()
+    ModLoader.add_child(instance)

@@ -2,7 +2,7 @@ extends BaseMod
 
 
 func init_mod() -> void:
-    print("Init weapon mod now")
+    print("Init weapon mod")
     
     var weapon_def: WeaponDef = WeaponDef.new({
         "description": [

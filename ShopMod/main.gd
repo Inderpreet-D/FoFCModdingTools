@@ -2,7 +2,7 @@ extends BaseMod
 
 
 func init_mod() -> void:
-    print("Init shop mod now")
+    print("Init shop mod")
     
     var size_up: ShopUpgrade = ShopUpgrade.new(
         "Size Up", "Increase Size", 1.0, 

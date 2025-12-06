@@ -2,7 +2,7 @@ extends BaseMod
 
 
 func init_mod() -> void:
-    print("Init game mode mod now")
+    print("Init game mode mod")
     
     var def: GameModeDef = GameModeDef.new({
         "description": "1 minute run with the same amount of bosses and enemies as the standard mode",

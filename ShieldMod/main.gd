@@ -2,7 +2,7 @@ extends BaseMod
 
 
 func init_mod() -> void:
-    print("Init shield mod now")
+    print("Init shield mod")
     
     var def: ShieldDef = ShieldDef.new({
         "description": "Stops projectiles when <broken>",

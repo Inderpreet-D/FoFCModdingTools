@@ -2,7 +2,7 @@ extends BaseMod
 
 
 func init_mod() -> void:
-    print("Init node mod now")
+    print("Init node mod")
     
     var num_nodes: int = 15
     var scene: PackedScene = load("res://NodeMod/node/Node.tscn")
