@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://d0dwrsx0mmww1"]
 
 [ext_resource type="Texture2D" uid="uid://c1kl5xtfoscua" path="res://assets/sprites/ui/studio_icon.png" id="1_g4ol3"]
-[ext_resource type="Shader" uid="uid://bf5re8ab6aril" path="res://EdgeShader2Mod/node/ShaderOverlay.gdshader" id="2_cpkio"]
+[ext_resource type="Shader" uid="uid://bf5re8ab6aril" path="res://EdgeShader2Mod/node/EdgeShader.gdshader" id="2_cpkio"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_lgtrj"]
 shader = ExtResource("2_cpkio")
