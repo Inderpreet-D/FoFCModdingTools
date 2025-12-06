@@ -1,0 +1,39 @@
+[gd_scene load_steps=4 format=3 uid="uid://bsarrayth7rae"]
+
+[ext_resource type="Texture2D" uid="uid://c1kl5xtfoscua" path="res://assets/sprites/ui/studio_icon.png" id="1_ga1tp"]
+[ext_resource type="Shader" uid="uid://6hvkm8ras4px" path="res://CRTShaderMod/node/ShaderOverlay.gdshader" id="2_kykff"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lgtrj"]
+shader = ExtResource("2_kykff")
+shader_parameter/resolution = Vector2(800, 450)
+shader_parameter/scan_line_amount = 0.34000001615
+shader_parameter/warp_amount = 0.0
+shader_parameter/noise_amount = 0.0
+shader_parameter/interference_amount = 0.2
+shader_parameter/grille_amount = 0.2750000130625
+shader_parameter/grille_size = 1.0010000000475
+shader_parameter/vignette_amount = 0.0
+shader_parameter/vignette_intensity = 0.0
+shader_parameter/aberation_amount = 0.4870000231325
+shader_parameter/roll_line_amount = 0.0
+shader_parameter/roll_speed = -8.0
+shader_parameter/scan_line_strength = -2.2749995380625005
+shader_parameter/pixel_strength = -0.6559998411599999
+
+[node name="CRTShaderOverlay" type="CanvasLayer"]
+layer = 10
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(797.49994, 447)
+scale = Vector2(6.1757813, 3.4765627)
+texture = ExtResource("1_ga1tp")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_lgtrj")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
