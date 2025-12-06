@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://bv73f6hasejro"]
+[gd_scene load_steps=4 format=3 uid="uid://lf4yx1u67ggi"]
 
 [ext_resource type="PackedScene" uid="uid://25vwh0m67k2e" path="res://pickups/base/Pickup.tscn" id="1_pk1nr"]
 [ext_resource type="Script" uid="uid://3a7lp70x8gsh" path="res://PickupMod/energy_pickup/EnergyPickup.gd" id="2_6ltmj"]
