@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://bnt6ojbyv0rgc"]
+[gd_scene load_steps=6 format=3 uid="uid://mk8yxiqgnvww"]
 
 [ext_resource type="PackedScene" uid="uid://cesqichyoyd7a" path="res://weapons/base/weapon/Weapon.tscn" id="1_u5bcp"]
 [ext_resource type="Script" uid="uid://bp82nm7g0ts1u" path="res://WeaponMod/spear_spawner/SpearSpawner.gd" id="2_mwfop"]

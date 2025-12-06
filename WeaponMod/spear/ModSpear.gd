@@ -2,6 +2,7 @@ extends Bullet
 
 
 const ORBIT_ANGLE: float = PI * 0.5
+const MAX_ORBIT_TIME: float = 20.0
 
 
 var down_mult: float = 0.75
@@ -11,47 +12,68 @@ var is_left: bool = false
 var elapsed_time: float = 0.0
 
 
+# Called when the node is recycled into the NodePool
+# Used to reset any modified values
 func reset() -> void:
-    super.reset()
+	super.reset()
+	
+	down_mult = 0.75
+	down_acc = 0.05
+	should_orbit = false
+	elapsed_time = 0.0
+	scale = Vector2.ONE * 2.0
+	is_left = false
+	
+	# Used to provide unique movement to this projectile in physics_process and process
+	behaviour = Behaviour.CUSTOM
+	speed = 250
 
-    down_mult = 0.75
-    down_acc = 0.05
-    should_orbit = false
-    elapsed_time = 0.0
-    scale = Vector2.ONE * 2.0
-    is_left = false
-    
-    behaviour = Behaviour.CUSTOM
-    speed = 250
+
+func _process_normal_physics(delta: float) -> void:
+	direction += Vector2.DOWN * down_mult * delta
+	down_mult += down_acc * delta
 
 
+func _process_orbit_physics(delta: float) -> void:
+	var angle: float = delta * ORBIT_ANGLE
+	
+	if is_left:
+		angle *= -1
+	
+	direction = direction.rotated(angle)
+
+
+# Called each frame
 func physics_process(delta: float) -> void:
-    if not should_orbit:
-        direction += Vector2.DOWN * down_mult * delta
-        down_mult += down_acc * delta
-    else:
-        if is_left:
-            direction = direction.rotated(-ORBIT_ANGLE * delta)
-        else:
-            direction = direction.rotated(ORBIT_ANGLE * delta)
-
-    velocity = direction.normalized() * speed
-    move_and_slide()
+	if not should_orbit:
+		_process_normal_physics(delta)
+	else:
+		_process_orbit_physics(delta)
+	
+	velocity = direction.normalized() * speed
+	move_and_slide()
 
 
+# Called each frame
 func process(delta: float) -> void:
-    rotation = direction.angle() + facing_angle
-    
-    if not should_orbit:
-        return
-    
-    elapsed_time += delta
-    if elapsed_time > 20.0:
-        _release()
+	# Make this bullet point in the direction that it wil move
+	rotation = direction.angle() + facing_angle
+	
+	if not should_orbit:
+		return
+	
+	# Timer for variant to make it die at some point
+	elapsed_time += delta
+	if elapsed_time >= MAX_ORBIT_TIME:
+		# Recycle this projectile into the NodePool
+		_release()
 
 
+# Called when the projectile leaves the screen
 func _on_VisibilityNotifier2D_screen_exited() -> void:
-    if should_orbit:
-        return
-    
-    _release()
+	# Orbiting projectiles can go off scren without dying
+	if should_orbit:
+		return
+	
+	# Recycle this projectile into the NodePool
+	_release()

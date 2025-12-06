@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://d0vwbvase3jpq"]
+[gd_scene load_steps=5 format=3 uid="uid://vedgtruo1oqo"]
 
 [ext_resource type="PackedScene" uid="uid://8hxdi54cxgra" path="res://weapons/pistol_spawner/bullet/Bullet.tscn" id="1_08r7t"]
 [ext_resource type="Script" uid="uid://bqx34t68adkie" path="res://WeaponMod/spear/ModSpear.gd" id="2_yntom"]
