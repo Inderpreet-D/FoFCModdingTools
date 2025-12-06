@@ -3,14 +3,17 @@ extends Level
 
 func _update_config_waves(config: LevelConfig) -> void :
     const pool_1: Array[String] = [
+        "Slime",
         "Pigeon", "Crow", "Kestrel", "Hawk",
         "Cop", "Baton", "FBI", "CIA"
     ]
     const pool_2: Array[String] = [
+        "Slime",
         "FishKeeper", "Worshipper", "Congregation", "Pope",
         "Weeb1", "Weeb2", "Idol", "Ex1", "Ex2", "Ex3", "Ex4", "Generic1", "Generic2", "Generic3"
     ]
     const pool_3: Array[String] = [
+        "Slime",
         "Warrior", "Shaman", "SpearThrower",
         "FireTrainee", "WindMagician", "EarthWizard"
     ]

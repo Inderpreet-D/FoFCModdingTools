@@ -1,0 +1,52 @@
+[gd_scene load_steps=6 format=3 uid="uid://6abh3ncoy0d8"]
+
+[ext_resource type="PackedScene" uid="uid://bs84bwusx85rf" path="res://enemies/base/CreepEnemy.tscn" id="1_fecsc"]
+[ext_resource type="Script" uid="uid://1jen2yumhinq" path="res://LevelMod/slime/SlimeEnemy.gd" id="2_aphak"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_w7la0"]
+resource_local_to_scene = true
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_50ut5"]
+resource_local_to_scene = true
+radius = 30.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oumie"]
+resource_local_to_scene = true
+size = Vector2(72, 72)
+
+[node name="SlimeEnemy" instance=ExtResource("1_fecsc")]
+scale = Vector2(2, 2)
+script = ExtResource("2_aphak")
+
+[node name="Shadow" parent="." index="0"]
+position = Vector2(0, 18.666668)
+scale = Vector2(6.35, 3)
+
+[node name="AnimatedSprite2D" parent="." index="3"]
+scale = Vector2(1, 1)
+sprite_frames = SubResource("SpriteFrames_w7la0")
+
+[node name="Healthbar" parent="." index="4"]
+offset_top = -72.0
+offset_bottom = -66.0
+
+[node name="PlayerCollider" parent="." index="6"]
+position = Vector2(0, -14.666667)
+shape = SubResource("CircleShape2D_50ut5")
+
+[node name="DamageCollider" parent="Area2D" index="0"]
+position = Vector2(0, -14.666667)
+shape = SubResource("RectangleShape2D_oumie")
+
+[node name="StatusEffects" parent="." index="9"]
+anchors_preset = 15
+offset_left = -26.666666
+offset_top = 28.0
+offset_right = 27.333334
+offset_bottom = 72.0

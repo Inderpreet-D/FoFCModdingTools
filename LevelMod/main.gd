@@ -21,3 +21,5 @@ func init_mod() -> void:
     })
     
     DefHandler.add_level(def)
+    
+    NodePool.scenes.set("Slime", load("res://LevelMod/slime/SlimeEnemy.tscn"))
