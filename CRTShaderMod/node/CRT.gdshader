@@ -7,9 +7,9 @@ the modified result to godotshaders.com.
 
 Optimised and packed by @c64cosmin
 If you do use this please share it with me
-Would love to see what you're making with it <3
+Would love to see what you are making with it <3
 
-It's a combination of these two shaders
+It is a combination of these two shaders
 ~godotshaders.com/shader/VHS-and-CRT-monitor-effect
 godotshaders.com/shader/crt-shader-with-realistic-blurring/
 

@@ -11,7 +11,7 @@ func on_break() -> void :
     super.on_break()
     
     # Async func that will be called and done after the shield is un-equipped
-    # await won't work in on_break function for shields (by design)
+    # await will not work in on_break function for shields (by design)
     var break_func: Callable = func() -> void:
         for node: Node in EnemySpawner.get_children():
             if node is not EnemyBullet:
