@@ -5,49 +5,43 @@ func init_mod() -> void:
 	print("Init shop mod")
 	
 	# Define a new shop upgrade
-	var size_up: ShopUpgrade = ShopUpgrade.new(
-		# Define title, description, and default value
-		"Size Up", "Increase Size", 1.0,
-		# Array of costs
-		[75, 125, 175, 225],
-		# Array of valus
-		[1.5, 2.0, 2.5, 3.0],
-		# Type of value
-		"float",
+	var size_up: ShopUpgrade = ShopUpgrade.new({
+		name = "Size Up",
+		description = "Increase Size",
+		default_value = 1.0,
+		cost = [75, 125, 175, 225],
+		value = [1.5, 2.0, 2.5, 3.0],
+		_type = "float",
 		# Tier in the shop, 0 is the first shelf
-		0,
-		# Array of lore
-		[
+		treeID = 0,
+		lore = [
 			"I am quite imposing",
 			"But I could be bigger",
 			"Bigger still",
 			"They say I may be too big",
 		]
-	)
+	})
 	
 	# Add the upgrade to the library
 	ShopData.add_upgrade("size-multiplier", size_up)
 	
 	# Define a new shop upgrade
-	var size_down: ShopUpgrade = ShopUpgrade.new(
-		# Define title, description, and default value
-		"Size Down", "Reduce Size", 1.0,
-		# Array of costs
-		[75, 125, 175, 225],
-		# Array of values
-		[1.0 / 1.5, 1.0 / 2.0, 1.0 / 2.5, 1.0 / 3.0],
-		# Type of value
-		"float",
+	var size_down: ShopUpgrade = ShopUpgrade.new({
+		name = "Size Down",
+		description = "Reduce Size",
+		default_value = 1.0,
+		cost = [75, 125, 175, 225],
+		value = [1.0 / 1.5, 1.0 / 2.0, 1.0 / 2.5, 1.0 / 3.0],
+		_type = "float",
 		# Tier in the shop, 0 is the first shelf
-		0,
-		# Array of lore
-		[
+		treeID = 0,
+		lore = [
 			"They say I may be too big",
 			"A little smaller",
 			"But I could be smaller still",
 			"I am quite small",
 		]
-	)
+	})
 	
 	# Add the upgrade to the library
 	ShopData.add_upgrade("size-multiplier-down", size_down)
