@@ -8,24 +8,18 @@ func init_mod() -> void:
 	var weapon_def: WeaponDef = WeaponDef.new({
 		"description": [
 			"Throw a spear",
-			# These should match the values from the "level_deltas" property
-			# They represent the actual change that is seen by the player
+			# These are mostly generated from the level_deltas
+			# These represent the actual change that is seen by the player
 			{
-				"base": {
-					"damage": 5.0
-				},
+				"base": {},
 				"tags": []
 			},
 			{
-				"base": {
-					"delay": 2.0
-				},
+				"base": {},
 				"tags": []
 			},
 			{
-				"base": {
-					"delay": 12.0
-				},
+				"base": {},
 				"tags": []
 			}
 		],
