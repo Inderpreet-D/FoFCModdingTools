@@ -1,8 +1,33 @@
 extends BaseMod
 
 
+const MOD_NAME: String = "ShopMod"
+
+
+func _update_mod_info() -> void:
+	ModLoader.config.update_info(MOD_NAME, ModConfigInfo.new({
+		id = "name",
+		name = "Name",
+		value = "Shop Mod"
+	}))
+	
+	ModLoader.config.update_info(MOD_NAME, ModConfigInfo.new({
+		id = "version",
+		name = "Version",
+		value = "1.0.0"
+	}))
+	
+	ModLoader.config.update_info(MOD_NAME, ModConfigInfo.new({
+		id = "description",
+		name = "Version",
+		value = "Adds two new library upgrades that modify the player size"
+	}))
+
+
 func init_mod() -> void:
 	print("Init shop mod")
+	
+	_update_mod_info()
 	
 	# Define a new shop upgrade
 	var size_up: ShopUpgrade = ShopUpgrade.new({

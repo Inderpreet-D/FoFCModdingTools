@@ -2,18 +2,58 @@ extends BaseMod
 
 
 const ENERGY_KEY: String = "energy_pickup"
+const MOD_NAME: String = "PickupMod"
+
+
+func _update_mod_info() -> void:
+	ModLoader.config.update_info(MOD_NAME, ModConfigInfo.new({
+		id = "name",
+		name = "Name",
+		value = "Pickup Mod"
+	}))
+	
+	ModLoader.config.update_info(MOD_NAME, ModConfigInfo.new({
+		id = "version",
+		name = "Version",
+		value = "1.0.0"
+	}))
+	
+	ModLoader.config.update_info(MOD_NAME, ModConfigInfo.new({
+		id = "description",
+		name = "Version",
+		value = "Adds a new type of pickup (Energy)"
+	}))
+
+
+func _update_mod_settings() -> void:
+	ModLoader.config.update_setting(MOD_NAME, ModConfigSetting.new({
+		id = "base-drop-chance",
+		name = "Base energy drop chance",
+		default_value = 2.5
+	}))
+	
+	ModLoader.config.update_setting(MOD_NAME, ModConfigSetting.new({
+		id = "luck-effect",
+		name = "Spear variant 2 orbit angle",
+		default_value = 5.0
+	}))
 
 
 func init_mod() -> void:
 	print("Init pickup mod")
+	
+	_update_mod_info()
+	_update_mod_settings()
 	
 	# Add to node pool
 	NodePool.scenes[ENERGY_KEY] = load("res://PickupMod/energy_pickup/EnergyPickup.tscn")
 	
 	# Add function that will be triggered when an enemy dies
 	PickupHandler.drop_handlers.append(func(enemy: Enemy) -> Pickup:
-		# 5% chance to drop, increases by 5% per luck upgrade
-		var can_spawn: bool = randf_range(0.0, 100.0) <= Stats.luck * 5.0
+		var base_drop_chance: float = ModLoader.config.get_setting_value(MOD_NAME, "base-drop-chance")
+		var luck_effect: float = ModLoader.config.get_setting_value(MOD_NAME, "luck-effect")
+		
+		var can_spawn: bool = randf_range(0.0, 100.0) <= base_drop_chance + (Stats.luck * luck_effect)
 		if not can_spawn:
 			return null
 		

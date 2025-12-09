@@ -1,20 +1,66 @@
 extends BaseMod
 
 
+const MOD_NAME: String = "NodeMod"
+
+
+func _update_mod_info() -> void:
+	ModLoader.config.update_info(MOD_NAME, ModConfigInfo.new({
+		id = "name",
+		name = "Name",
+		value = "Node Mod"
+	}))
+	
+	ModLoader.config.update_info(MOD_NAME, ModConfigInfo.new({
+		id = "version",
+		name = "Version",
+		value = "1.0.0"
+	}))
+	
+	ModLoader.config.update_info(MOD_NAME, ModConfigInfo.new({
+		id = "description",
+		name = "Version",
+		value = "Adds a bunch of animated nodes to the game"
+	}))
+
+
+func _update_mod_settings() -> void:
+	ModLoader.config.update_setting(MOD_NAME, ModConfigSetting.new({
+		id = "num-nodes",
+		name = "Number of nodes per ring",
+		default_value = 15
+	}))
+	
+	ModLoader.config.update_setting(MOD_NAME, ModConfigSetting.new({
+		id = "num-rings",
+		name = "Number of rings",
+		default_value = 3
+	}))
+
+
 func init_mod() -> void:
 	print("Init node mod")
 	
-	var num_nodes: int = 15
-	var scene: PackedScene = load("res://NodeMod/node/Node.tscn")
-	for j: int in 3:
-		for i: int in num_nodes:
-			var instance: CanvasLayer = scene.instantiate()
-			
-			# Do initial setup for this node
-			@warning_ignore("unsafe_method_access")
-			instance.setup(num_nodes, i, j)
-			
-			# Add to tree
-			ModLoader.add_child(instance)
+	_update_mod_info()
+	_update_mod_settings()
 	
-	print("Added nodes from node mod")
+	
+	ModLoader.mod_config_loaded.connect(func() -> void:
+		var num_nodes: int = ModLoader.config.get_setting_value(MOD_NAME, "num-nodes")
+		var num_rings: int = ModLoader.config.get_setting_value(MOD_NAME, "num-rings")
+		print("Adding %d nodes to %d rings, total %d nodes" % [num_nodes, num_rings, num_nodes * num_rings])
+		
+		var scene: PackedScene = load("res://NodeMod/node/Node.tscn")
+		for j: int in num_rings:
+			for i: int in num_nodes:
+				var instance: CanvasLayer = scene.instantiate()
+				
+				# Do initial setup for this node
+				@warning_ignore("unsafe_method_access")
+				instance.setup(num_nodes, i, j)
+				
+				# Add to tree
+				ModLoader.add_child(instance)
+		
+		print("Added nodes from node mod")
+	)

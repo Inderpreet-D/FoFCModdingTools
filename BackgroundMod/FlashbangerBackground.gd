@@ -1,6 +1,9 @@
 class_name FlashbangerBackground extends Background
 
 
+const MOD_NAME: String = "BackgroundMod"
+
+
 # Called by registered signal when an enemy dies
 func _on_enemy_dead(enemy: Enemy) -> void:
 	# Get an instance of an "Explosion" from the NodePool
@@ -10,11 +13,11 @@ func _on_enemy_dead(enemy: Enemy) -> void:
 	explosion.global_position = enemy.global_position
 	
 	# Arbitrary, but low damage and large radius
-	explosion.damage = 2.0
-	explosion.max_radius = 1030.0
+	explosion.damage = ModLoader.config.get_setting_value(MOD_NAME, "explosion-damage")
+	explosion.max_radius = ModLoader.config.get_setting_value(MOD_NAME, "explosion-radius")
 	
 	# Pretty fast size increase
-	explosion.expansion_rate_modifier = 20.0 / 1.5
+	explosion.expansion_rate_modifier = ModLoader.config.get_setting_value(MOD_NAME, "explosion-expansion-rate")
 	
 	# This lets any passives that the player has affect the explosion parameters
 	Passives.modify_projectile(explosion)

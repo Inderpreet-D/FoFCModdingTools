@@ -1,8 +1,33 @@
 extends BaseMod
 
 
+const MOD_NAME: String = "GameModeHyperMod"
+
+
+func _update_mod_info() -> void:
+	ModLoader.config.update_info(MOD_NAME, ModConfigInfo.new({
+		id = "name",
+		name = "Name",
+		value = "Hyper Game Mode Mod"
+	}))
+	
+	ModLoader.config.update_info(MOD_NAME, ModConfigInfo.new({
+		id = "version",
+		name = "Version",
+		value = "1.0.0"
+	}))
+	
+	ModLoader.config.update_info(MOD_NAME, ModConfigInfo.new({
+		id = "description",
+		name = "Version",
+		value = "Adds a super-short 1 minute game mode"
+	}))
+
+
 func init_mod() -> void:
 	print("Init hyper game mode mod")
+	
+	_update_mod_info()
 	
 	# Define a new game mode
 	var def: GameModeDef = GameModeDef.new({

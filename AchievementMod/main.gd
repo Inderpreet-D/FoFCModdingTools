@@ -1,8 +1,33 @@
 extends BaseMod
 
 
+const MOD_NAME: String = "AchievementMod"
+
+
+func _update_mod_info() -> void:
+	ModLoader.config.update_info(MOD_NAME, ModConfigInfo.new({
+		id = "name",
+		name = "Name",
+		value = "Achievement Mod"
+	}))
+	
+	ModLoader.config.update_info(MOD_NAME, ModConfigInfo.new({
+		id = "version",
+		name = "Version",
+		value = "1.0.0"
+	}))
+	
+	ModLoader.config.update_info(MOD_NAME, ModConfigInfo.new({
+		id = "description",
+		name = "Version",
+		value = "Adds a new achievement and an unlockable background"
+	}))
+
+
 func init_mod() -> void:
 	print("Init achievement mod")
+	
+	_update_mod_info()
 	
 	# Define a new background
 	var background_def: BackgroundDef = BackgroundDef.new({

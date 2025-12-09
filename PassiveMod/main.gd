@@ -1,8 +1,33 @@
 extends BaseMod
 
 
+const MOD_NAME: String = "PassiveMod"
+
+
+func _update_mod_info() -> void:
+	ModLoader.config.update_info(MOD_NAME, ModConfigInfo.new({
+		id = "name",
+		name = "Name",
+		value = "Passive Mod"
+	}))
+	
+	ModLoader.config.update_info(MOD_NAME, ModConfigInfo.new({
+		id = "version",
+		name = "Version",
+		value = "1.0.0"
+	}))
+	
+	ModLoader.config.update_info(MOD_NAME, ModConfigInfo.new({
+		id = "description",
+		name = "Version",
+		value = "Adds a new passive (Damage Aura) and a new boss passive (The World)"
+	}))
+
+
 func init_mod() -> void:
 	print("Init passive mod")
+	
+	_update_mod_info()
 	
 	# Define a new passive
 	var passive_def: PassiveDef = PassiveDef.new({

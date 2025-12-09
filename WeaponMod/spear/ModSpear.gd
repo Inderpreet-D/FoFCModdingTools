@@ -1,8 +1,7 @@
 extends Bullet
 
 
-const ORBIT_ANGLE: float = PI * 0.5
-const MAX_ORBIT_TIME: float = 20.0
+const MOD_NAME: String = "WeaponMod"
 
 
 var down_mult: float = 0.75
@@ -10,6 +9,8 @@ var down_acc: float = 0.05
 var should_orbit: bool = false
 var is_left: bool = false
 var elapsed_time: float = 0.0
+var orbit_angle: float
+var orbit_time: float
 
 
 # Called when the node is recycled into the NodePool
@@ -35,7 +36,7 @@ func _process_normal_physics(delta: float) -> void:
 
 
 func _process_orbit_physics(delta: float) -> void:
-	var angle: float = delta * ORBIT_ANGLE
+	var angle: float = delta * orbit_angle
 	
 	if is_left:
 		angle *= -1
@@ -64,9 +65,17 @@ func process(delta: float) -> void:
 	
 	# Timer for variant to make it die at some point
 	elapsed_time += delta
-	if elapsed_time >= MAX_ORBIT_TIME:
+	if elapsed_time >= orbit_time:
 		# Recycle this projectile into the NodePool
 		_release()
+
+
+# Called when added to the scene
+func ready() -> void:
+	super.ready()
+	
+	orbit_time = ModLoader.config.get_setting_value(MOD_NAME, "orbit-time")
+	orbit_angle = ModLoader.config.get_setting_value(MOD_NAME, "orbit-angle")
 
 
 # Called when the projectile leaves the screen
