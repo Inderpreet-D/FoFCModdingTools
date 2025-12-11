@@ -1,5 +1,6 @@
 {
-	"test name": "Cursor Mod",
-	"test version": "1.0.0",
-	"test description": "Replaces the normal cursor with a re-skinned, blinking one"
+	"name": "Cursor Mod",
+	"version": "1.0.0",
+	"description": "Replaces the normal cursor with a re-skinned, blinking one",
+	"purpose": "Shows how to overwrite project settings, load custom images, and create and read settings",
 }
