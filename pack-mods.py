@@ -52,6 +52,15 @@ def main(mod_dirs: list[str]) -> None:
     shutil.move(f"{mod_dir}.zip", dest)
 
     print(f"Created zip archive at {dest}{mod_dir}.zip")
+
+    # Copy the mod's JSON file if it exists
+    if os.path.exists(f"{mod_dir}.json"):
+      if os.path.exists(f"{dest}{mod_dir}.json"):
+        os.remove(f"{dest}{mod_dir}.json")
+      
+      shutil.copyfile(f"{mod_dir}.json", f"{dest}{mod_dir}.json")
+      print(f"Copied JSON file to {dest}{mod_dir}.json")
+
     if i < len(mod_dirs) - 1:
       print("")
   
