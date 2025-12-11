@@ -1,0 +1,7 @@
+{
+	"name": "Achievement Mod",
+	"version": "1.0.0",
+	"description": "Adds a new achievement and an unlockable background (Hard Mode)",
+	"Unlockable": "Hard Mode Background",
+	"Other Value": "Something else"
+}

@@ -1,33 +1,8 @@
 extends BaseMod
 
 
-const MOD_NAME: String = "LevelMod"
-
-
-func _update_mod_info() -> void:
-	ModLoader.config.update_info(MOD_NAME, ModConfigInfo.new({
-		id = "name",
-		name = "Name",
-		value = "Level Mod"
-	}))
-	
-	ModLoader.config.update_info(MOD_NAME, ModConfigInfo.new({
-		id = "version",
-		name = "Version",
-		value = "1.0.0"
-	}))
-	
-	ModLoader.config.update_info(MOD_NAME, ModConfigInfo.new({
-		id = "description",
-		name = "Version",
-		value = "Adds a new level (Swamp)"
-	}))
-
-
 func init_mod() -> void:
 	print("Init level mod")
-	
-	_update_mod_info()
 	
 	# Define a new level
 	var def: LevelDef = LevelDef.new({

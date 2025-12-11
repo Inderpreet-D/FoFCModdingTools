@@ -1,33 +1,8 @@
 extends BaseMod
 
 
-const MOD_NAME: String = "CursorMod"
-
-
-func _update_mod_info() -> void:
-	ModLoader.config.update_info(MOD_NAME, ModConfigInfo.new({
-		id = "name",
-		name = "Name",
-		value = "Cursor Mod"
-	}))
-	
-	ModLoader.config.update_info(MOD_NAME, ModConfigInfo.new({
-		id = "version",
-		name = "Version",
-		value = "1.0.0"
-	}))
-	
-	ModLoader.config.update_info(MOD_NAME, ModConfigInfo.new({
-		id = "description",
-		name = "Version",
-		value = "Replaces the normal cursor with a re-skinned, blinking one"
-	}))
-
-
 func init_mod() -> void:
 	print("Init cursor mod")
-	
-	_update_mod_info()
 	
 	# Godot will throw an error when using load() to load this image since it is in a mod
 	# This still throws a warning but that is fine

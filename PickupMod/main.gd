@@ -5,26 +5,6 @@ const ENERGY_KEY: String = "energy_pickup"
 const MOD_NAME: String = "PickupMod"
 
 
-func _update_mod_info() -> void:
-	ModLoader.config.update_info(MOD_NAME, ModConfigInfo.new({
-		id = "name",
-		name = "Name",
-		value = "Pickup Mod"
-	}))
-	
-	ModLoader.config.update_info(MOD_NAME, ModConfigInfo.new({
-		id = "version",
-		name = "Version",
-		value = "1.0.0"
-	}))
-	
-	ModLoader.config.update_info(MOD_NAME, ModConfigInfo.new({
-		id = "description",
-		name = "Version",
-		value = "Adds a new type of pickup (Energy)"
-	}))
-
-
 func _update_mod_settings() -> void:
 	ModLoader.config.update_setting(MOD_NAME, ModConfigSetting.new({
 		id = "base-drop-chance",
@@ -42,7 +22,6 @@ func _update_mod_settings() -> void:
 func init_mod() -> void:
 	print("Init pickup mod")
 	
-	_update_mod_info()
 	_update_mod_settings()
 	
 	# Add to node pool

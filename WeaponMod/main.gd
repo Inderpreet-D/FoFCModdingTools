@@ -4,26 +4,6 @@ extends BaseMod
 const MOD_NAME: String = "WeaponMod"
 
 
-func _update_mod_info() -> void:
-	ModLoader.config.update_info(MOD_NAME, ModConfigInfo.new({
-		id = "name",
-		name = "Name",
-		value = "Spear Weapon Mod"
-	}))
-	
-	ModLoader.config.update_info(MOD_NAME, ModConfigInfo.new({
-		id = "version",
-		name = "Version",
-		value = "1.0.0"
-	}))
-	
-	ModLoader.config.update_info(MOD_NAME, ModConfigInfo.new({
-		id = "description",
-		name = "Version",
-		value = "Adds a new weapon (spear) and a new background (Spear Guy)"
-	}))
-
-
 func _update_mod_settings() -> void:
 	ModLoader.config.update_setting(MOD_NAME, ModConfigSetting.new({
 		id = "orbit-time",
@@ -41,7 +21,6 @@ func _update_mod_settings() -> void:
 func init_mod() -> void:
 	print("Init weapon mod")
 	
-	_update_mod_info()
 	_update_mod_settings()
 	
 	# Define a new weapon

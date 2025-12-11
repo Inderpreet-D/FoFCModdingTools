@@ -4,26 +4,6 @@ extends BaseMod
 const MOD_NAME: String = "NodeMod"
 
 
-func _update_mod_info() -> void:
-	ModLoader.config.update_info(MOD_NAME, ModConfigInfo.new({
-		id = "name",
-		name = "Name",
-		value = "Node Mod"
-	}))
-	
-	ModLoader.config.update_info(MOD_NAME, ModConfigInfo.new({
-		id = "version",
-		name = "Version",
-		value = "1.0.0"
-	}))
-	
-	ModLoader.config.update_info(MOD_NAME, ModConfigInfo.new({
-		id = "description",
-		name = "Version",
-		value = "Adds a bunch of animated nodes to the game"
-	}))
-
-
 func _update_mod_settings() -> void:
 	ModLoader.config.update_setting(MOD_NAME, ModConfigSetting.new({
 		id = "num-nodes",
@@ -41,9 +21,7 @@ func _update_mod_settings() -> void:
 func init_mod() -> void:
 	print("Init node mod")
 	
-	_update_mod_info()
 	_update_mod_settings()
-	
 	
 	ModLoader.mod_config_loaded.connect(func() -> void:
 		var num_nodes: int = ModLoader.config.get_setting_value(MOD_NAME, "num-nodes")
