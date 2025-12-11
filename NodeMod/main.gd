@@ -23,7 +23,8 @@ func init_mod() -> void:
 	
 	_update_mod_settings()
 	
-	ModLoader.mod_config_loaded.connect(func() -> void:
+	# Called after mods and settings have been loaded
+	ModLoader.mod_config_changed.connect(func() -> void:
 		var num_nodes: int = ModLoader.config.get_setting_value(MOD_NAME, "num-nodes")
 		var num_rings: int = ModLoader.config.get_setting_value(MOD_NAME, "num-rings")
 		print("Adding %d nodes to %d rings, total %d nodes" % [num_nodes, num_rings, num_nodes * num_rings])

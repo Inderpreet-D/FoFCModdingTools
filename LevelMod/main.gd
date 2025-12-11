@@ -22,7 +22,7 @@ func init_mod() -> void:
 	NodePool.scenes.set("Slime", load("res://LevelMod/slime/SlimeEnemy.tscn"))
 	
 	# Called after mods and settings have been loaded
-	ModLoader.mod_config_loaded.connect(func() -> void:
+	ModLoader.mod_config_changed.connect(func() -> void:
 		# Get defined setting
 		var level_name: String = ModLoader.config.get_setting_value(MOD_NAME, "level-name")
 		

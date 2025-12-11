@@ -33,7 +33,8 @@ func init_mod() -> void:
 	# Allow the shield class to be instantiated later
 	ClassRegistry.register("EMPShield", "res://ShieldMod/EMPShield.gd")
 	
-	ModLoader.mod_config_loaded.connect(func() -> void:
+	# Called after mods and settings have been loaded
+	ModLoader.mod_config_changed.connect(func() -> void:
 		var selected_tier: int = ModLoader.config.get_setting_value(MOD_NAME, "tier")
 		var selected_title: String = ModLoader.config.get_setting_value(MOD_NAME, "title")
 		
