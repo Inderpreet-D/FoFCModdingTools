@@ -1,8 +1,7 @@
-extends CanvasLayer
+extends TextureRect
 
 
-@onready var texture_rect: TextureRect = %TextureRect
-@onready var start_position: Vector2 = texture_rect.position
+@onready var start_position: Vector2 = position
 
 
 var texture_offset: Vector2 = Vector2.UP * 200.0
@@ -17,29 +16,29 @@ var alpha: float
 
 
 # Set initial variables
-func setup(num_nodes: int, i: int, j: int) -> void:
-	texture_offset = texture_offset.rotated((TAU / num_nodes) * i)
-	texture_offset = texture_offset.rotated(j * (PI / 3))
+func setup(num_nodes: int, node_index: int, ring_index: int, num_rings: int) -> void:
+	texture_offset = texture_offset.rotated((TAU / num_nodes) * node_index)
+	texture_offset = texture_offset.rotated(ring_index * (PI / 3))
 	starting_texture_offset = texture_offset
 	
-	speed *= [1, -1][j % 2]
+	speed *= [1, -1][ring_index % 2]
 	starting_speed = speed
 	
-	rotation_speed *= (1.0 + ((j + 1) / 3.0)) * [1, -1][j % 2]
+	rotation_speed *= (1.0 + ((ring_index + 1) / 3.0)) * [1, -1][ring_index % 2]
 	starting_rotation_speed = rotation_speed
 	
-	shift = j * 50.0
+	shift = ring_index * 50.0
 	starting_shift = shift
 	
-	alpha = [0.5, 0.3, 0.1][j]
+	alpha = lerpf(0.5, 0.1, float(ring_index) / float(num_rings))
 
 
 # Animates the node
 func _process(delta: float) -> void:
 	var shift_offset: Vector2 = texture_offset.normalized() * shift
-	texture_rect.position = start_position + texture_offset + shift_offset
+	position = start_position + texture_offset + shift_offset
 	texture_offset = texture_offset.rotated(delta * speed)
-	texture_rect.rotation += delta * rotation_speed
+	rotation += delta * rotation_speed
 
 
 # Called when the game is paused
@@ -61,4 +60,4 @@ func _ready() -> void:
 	SceneSwitcher.pause_started.connect(_on_pause_started)
 	SceneSwitcher.pause_ended.connect(_on_pause_ended)
 	
-	texture_rect.self_modulate.a = alpha
+	self_modulate.a = alpha
