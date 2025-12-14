@@ -64,7 +64,7 @@ After you have created a mod you can run `python pack-mods.py YourModName` to pa
 
 ### Sharing Mods
 
-Mods can be shared through the Discord server for now. You can join the server from the icon on the main menu.
+Mods can be shared through the Discord server. You can join the server from the icon on the main menu. Mods should be uploaded in their packaged form i.e., what is in the mods folder. This will be the .zip file and a .json file if you decide to include one.
 
 ## FAQs
 
