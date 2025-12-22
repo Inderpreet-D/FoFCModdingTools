@@ -16,7 +16,7 @@ You can get to this mods folder by starting the game, selecting "Mods" on the ma
 
 ### Finding Mods
 
-Mods will be hosted on the game's Discord server, you can find a link to it on the main menu, in the bottom right corner.
+Mods will be available through the workshop, you can get to it from your library.
 
 ## Creating Mods
 
@@ -26,6 +26,11 @@ Mods will be hosted on the game's Discord server, you can find a link to it on t
 - Clone this repository
 - Godot RE Tools, available at https://github.com/GDRETools/gdsdecomp
 - Decompile the .exe file of the game, "Cult Survivors.exe", into this repository, you should see a bunch of folders on the same level as this README file
+
+### Best Practices
+
+- Mods that you create should have a unique name, something like `YourName-ModName` or `DragynSlayr-SwampLevelMod` for example. This prevents your mod from overwriting information from other mods and also from being overwritten.
+- Any image loading should be done with the `Utilities.load_image_from_path` function, using the regular `load` function won't actually load new image assets, but it will work for loading scenes.
 
 ### Structure
 
@@ -56,7 +61,7 @@ For example, you can use this function to:
 - instantiate a scene and add it as a child of any nodes
 - register callbacks for signals
 - add new definitions for Backgrounds, Game Modes, Levels, etc.
-- modify any existing globals
+- modify any existing global class values
 
 ### Packaging Mods
 
@@ -64,14 +69,18 @@ After you have created a mod you can run `python pack-mods.py YourModName` to pa
 
 ### Sharing Mods
 
-Mods can be shared through the Discord server. You can join the server from the icon on the main menu. Mods should be uploaded in their packaged form i.e., what is in the mods folder. This will be the .zip file and a .json file if you decide to include one.
+Mods should be uploaded from the Mods screen. Click the "Upload" button to open the mod uploader. From this new window you can set an icon, title, description, and any tags for your mod. Next you should hit "Select Folder" if the mod you have made is not already in your "mods" folder. Mods should be uploaded in their packaged form i.e., what is in the mods folder and can be loaded by the game. This will be the .zip file and a .json file if you decide to include one. Next you should hit "Upload" to submit your mod to Steam. If everything works out you should see a success message with information on how to view your workshop item. If any errors happen you will see a message near the cancel button.
+
+### Updating Mods
+
+Updating your mods is very similar to uploading them. Use the in-game mod uploader but change the mode at the top to "Update Existing" instead of "Create New". Next select the mod that you want to update. You should then edit the fields with any information that you want to update and finally add a change note if you want. Any fields that are not changed or set will not be changed on the workshop, so the icon doesn't need to be set again if you want to keep the existing one. Hitting the "Update" button will then submit your changes to Steam. You'll then see either the success message or some error.
 
 ## FAQs
 
 1. How do I do (some specific thing)?
 
    - The example mods in this repo show how to add new items, characters, enemies, weapons, so those are a good starting point
-   - If you have more complex questions or things not covered by the examples then please ask questions in the Discord server to get help with understanding how the game works
+   - If you have more complex questions or things not covered by the examples then please ask questions in the Discord server to get help with understanding how the game works, you can find a link to the server on the main menu
 
 2. What do I need to know to make a mod?
 
