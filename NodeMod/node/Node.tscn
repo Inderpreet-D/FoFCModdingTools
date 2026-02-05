@@ -1,9 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://bys0w1gbh5j57"]
+[gd_scene format=3 uid="uid://bys0w1gbh5j57"]
 
 [ext_resource type="Script" uid="uid://b0fqw8erxsy56" path="res://NodeMod/node/Node.gd" id="1_3xei4"]
 [ext_resource type="Texture2D" uid="uid://ch001leo6otqo" path="res://assets/sprites/ui/game_mode/game_mode_normal.png" id="2_470o3"]
 
-[node name="TextureRect" type="TextureRect"]
+[node name="TextureRect" type="TextureRect" unique_id=2014832317]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
