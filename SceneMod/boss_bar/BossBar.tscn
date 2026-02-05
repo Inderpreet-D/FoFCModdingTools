@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://bd24e4m56vu7l"]
+
+[ext_resource type="Shader" uid="uid://tpbgmudqvcc2" path="res://SceneMod/boss_bar/BossBar.gdshader" id="1_hf5it"]
+[ext_resource type="Script" uid="uid://c5x81amtf8442" path="res://SceneMod/boss_bar/BossBar.gd" id="2_tjj8s"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_hf5it"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_tjj8s"]
+noise = SubResource("FastNoiseLite_hf5it")
+seamless = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xt1ol"]
+shader = ExtResource("1_hf5it")
+shader_parameter/speed_1 = Vector2(0.67, 0.83)
+shader_parameter/x_mul = 25.0
+shader_parameter/y_mul = 25.0
+shader_parameter/x_threshold = 0.499999988824
+shader_parameter/y_threshold = 0.499999988824
+shader_parameter/noise_1 = SubResource("NoiseTexture2D_tjj8s")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5o8u7"]
+bg_color = Color(0.196078, 0.196078, 0.196078, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hfvn2"]
+bg_color = Color(1, 0, 0, 1)
+
+[node name="BossBar" type="ProgressBar" unique_id=579588519]
+material = SubResource("ShaderMaterial_xt1ol")
+custom_minimum_size = Vector2(0, 30)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/background = SubResource("StyleBoxFlat_5o8u7")
+theme_override_styles/fill = SubResource("StyleBoxFlat_hfvn2")
+value = 50.0
+show_percentage = false
+script = ExtResource("2_tjj8s")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1612810091]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -20.0
+offset_right = 106.0
+offset_bottom = 20.0
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+
+[node name="Label" type="Label" parent="MarginContainer" unique_id=1221793964]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 20
+text = "BOSS NAME"
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=348930144]
+unique_name_in_owner = true
