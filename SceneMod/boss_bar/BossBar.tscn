@@ -12,8 +12,8 @@ seamless = true
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xt1ol"]
 shader = ExtResource("1_hf5it")
 shader_parameter/speed_1 = Vector2(0.67, 0.83)
-shader_parameter/x_mul = 25.0
-shader_parameter/y_mul = 25.0
+shader_parameter/x_mul = 40000.0
+shader_parameter/y_mul = 22500.0
 shader_parameter/x_threshold = 0.499999988824
 shader_parameter/y_threshold = 0.499999988824
 shader_parameter/noise_1 = SubResource("NoiseTexture2D_tjj8s")
