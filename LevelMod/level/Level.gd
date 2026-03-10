@@ -27,27 +27,64 @@ func _update_config_waves(config: LevelConfig) -> void:
 	
 	config.waves = [
 		# Two waves of enemies followed by a boss
-		EnemyWave.new(false, wave_time, pool_1),
-		EnemyWave.new(false, wave_time, pool_1 + pool_2),
-		EnemyWave.new(false, boss_time, ["Boss"]),
+		EnemyWave.new({
+			"time": wave_time,
+			"pool": pool_1
+		}),
+		EnemyWave.new({
+			"time": wave_time,
+			"pool": pool_1 + pool_2
+		}),
+		EnemyWave.new({
+			"time": boss_time,
+			"pool": ["Boss"]
+		}),
 		
 		# Two waves of enemies followed by a boss
-		EnemyWave.new(false, wave_time, pool_2),
-		EnemyWave.new(false, wave_time, pool_2 + pool_3),
-		EnemyWave.new(false, boss_time, ["Boss"]),
+		EnemyWave.new({
+			"time": wave_time,
+			"pool": pool_2
+		}),
+		EnemyWave.new({
+			"time": wave_time,
+			"pool": pool_2 + pool_3
+		}),
+		EnemyWave.new({
+			"time": boss_time,
+			"pool": ["Boss"]
+		}),
 		
 		# Two waves of enemies followed by a boss
-		EnemyWave.new(false, wave_time, pool_3),
-		EnemyWave.new(false, wave_time, pool_1 + pool_1 + pool_2 + pool_3 + pool_3),
-		EnemyWave.new(false, boss_time, ["Boss"]),
+		EnemyWave.new({
+			"time": wave_time,
+			"pool": pool_3
+		}),
+		EnemyWave.new({
+			"time": wave_time,
+			"pool": pool_1 + pool_1 + pool_2 + pool_3 + pool_3
+		}),
+		EnemyWave.new({
+			"time": boss_time,
+			"pool": ["Boss"]
+		}),
 		
 		# One wave of enemies followed by a boss
-		EnemyWave.new(false, wave_time, pool_1 + pool_2 + pool_3),
-		EnemyWave.new(false, boss_time, ["Boss"]),
+		EnemyWave.new({
+			"time": wave_time,
+			"pool": pool_1 + pool_2 + pool_3
+		}),
+		EnemyWave.new({
+			"time": boss_time,
+			"pool": ["Boss"]
+		}),
 		
 		# Wave of enemies that continues until the end of the game
 		# Adds more enemy capacity after every minute
-		EnemyWave.new(false, 60, pool_1 + pool_2 + pool_3)
+		EnemyWave.new({
+			"time": 60,
+			"pool": pool_1 + pool_2 + pool_3,
+			"capacity": 15.0
+		})
 	]
 
 
