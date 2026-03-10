@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://dqyy2284r211l"]
+
+[ext_resource type="Script" uid="uid://d2lweknu4jp03" path="res://ActiveMod/active_manager/ActiveManager.gd" id="1_m4y3l"]
+
+[node name="ActiveManager" type="Node" unique_id=1347484481]
+process_mode = 1
+script = ExtResource("1_m4y3l")
