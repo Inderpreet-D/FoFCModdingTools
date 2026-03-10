@@ -1,12 +1,12 @@
-[gd_scene format=3 uid="uid://b6k0dtftankcx"]
+[gd_scene load_steps=6 format=3 uid="uid://b6k0dtftankcx"]
 
 [ext_resource type="Script" uid="uid://csgl0vtsudgxh" path="res://addons/Todo_Manager/Dock.gd" id="1"]
 [ext_resource type="Script" uid="uid://bnyawhvwojm5g" path="res://addons/Todo_Manager/Project.gd" id="2"]
 [ext_resource type="Script" uid="uid://dp4hevwsquax6" path="res://addons/Todo_Manager/Current.gd" id="3"]
 
-[sub_resource type="ButtonGroup" id="ButtonGroup_kqxcu"]
+[sub_resource type="ButtonGroup" id="ButtonGroup_efwmq"]
 
-[sub_resource type="ButtonGroup" id="ButtonGroup_kltg3"]
+[sub_resource type="ButtonGroup" id="ButtonGroup_0vbud"]
 
 [node name="Dock" type="Control" unique_id=176737822]
 custom_minimum_size = Vector2(0, 200)
@@ -58,6 +58,7 @@ size_flags_vertical = 3
 current_tab = 0
 
 [node name="Project" type="HSplitContainer" parent="VBoxContainer/TabContainer" unique_id=4736193]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -185,13 +186,13 @@ text = "Script Name:"
 
 [node name="FullPathCheckBox" type="CheckBox" parent="VBoxContainer/TabContainer/Settings/ScrollContainer/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer2/Scripts/ScriptName" unique_id=1801453611]
 layout_mode = 2
-button_group = SubResource("ButtonGroup_kqxcu")
+button_group = SubResource("ButtonGroup_efwmq")
 text = "Full path"
 
 [node name="ShortNameCheckBox" type="CheckBox" parent="VBoxContainer/TabContainer/Settings/ScrollContainer/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer2/Scripts/ScriptName" unique_id=1143762755]
 layout_mode = 2
 button_pressed = true
-button_group = SubResource("ButtonGroup_kqxcu")
+button_group = SubResource("ButtonGroup_efwmq")
 text = "Short name"
 
 [node name="ScriptSort" type="HBoxContainer" parent="VBoxContainer/TabContainer/Settings/ScrollContainer/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer2/Scripts" unique_id=439757611]
@@ -204,12 +205,12 @@ text = "Sort Order:"
 [node name="AlphSortCheckBox" type="CheckBox" parent="VBoxContainer/TabContainer/Settings/ScrollContainer/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer2/Scripts/ScriptSort" unique_id=2074699950]
 layout_mode = 2
 button_pressed = true
-button_group = SubResource("ButtonGroup_kltg3")
+button_group = SubResource("ButtonGroup_0vbud")
 text = "Alphabetical"
 
 [node name="RAlphSortCheckBox" type="CheckBox" parent="VBoxContainer/TabContainer/Settings/ScrollContainer/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer2/Scripts/ScriptSort" unique_id=1433335263]
 layout_mode = 2
-button_group = SubResource("ButtonGroup_kltg3")
+button_group = SubResource("ButtonGroup_0vbud")
 text = "Reverse Alphabetical"
 
 [node name="ScriptColour" type="HBoxContainer" parent="VBoxContainer/TabContainer/Settings/ScrollContainer/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer2/Scripts" unique_id=1136853633]
