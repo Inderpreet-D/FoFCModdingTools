@@ -15,11 +15,15 @@ config/version="1.0.0"
 run/main_scene="res://ui/screens/splash/Splash.tscn"
 config/use_custom_user_dir=true
 config/custom_user_dir_name="Founder of the Final Cult"
-config/features=PackedStringArray("4.5")
+config/features=PackedStringArray("4.6")
 boot_splash/bg_color=Color(0, 0, 0, 1)
 boot_splash/show_image=false
 config/icon="res://assets/sprites/ui/game_icon.png"
 config/windows_native_icon="res://game_icon.ico"
+
+[audio]
+
+buses/default_bus_layout="uid://dfeycqlo6f30w"
 
 [autoload]
 
@@ -35,7 +39,6 @@ UpgradeData="*res://autoloads/UpgradeData.gd"
 Passives="*res://autoloads/Passives.gd"
 Global="*res://autoloads/Global.gd"
 ShopData="*res://autoloads/ShopData.gd"
-Stats="*res://autoloads/Stats.gd"
 Weapons="*res://autoloads/Weapons.gd"
 Backgrounds="*res://autoloads/Backgrounds.gd"
 EnemySpawner="*res://autoloads/EnemySpawner.gd"
@@ -50,10 +53,10 @@ Bosses="*res://autoloads/Bosses.gd"
 InputEcho="*res://autoloads/input_echo/InputEcho.tscn"
 NodePool="*res://autoloads/NodePool.gd"
 AchievementManager="*res://autoloads/achievement_manager/AchievementManager.gd"
-DebugMenu="*res://addons/debug_menu/debug_menu.tscn"
+DebugMenu="*uid://cggqb75a8w8r"
 InputManager="*res://autoloads/InputManager.gd"
 SteamManager="*res://autoloads/SteamManager.gd"
-InputHelper="*res://addons/input_helper/input_helper.gd"
+InputHelper="*uid://cholww48njaeh"
 ModLoader="*res://autoloads/mod_loader/ModLoader.gd"
 
 [debug]
@@ -539,3 +542,10 @@ shader_time={
 "type": "float",
 "value": 0.0
 }
+
+[steam]
+
+initialization/app_id=0
+initialization/initialize_on_startup=false
+initialization/embed_callbacks=false
+multiplayer_peer/max_channels=4

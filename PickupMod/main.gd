@@ -14,7 +14,7 @@ func _update_mod_settings() -> void:
 	
 	ModLoader.config.update_setting(MOD_NAME, ModConfigSetting.new({
 		id = "luck-effect",
-		name = "Spear variant 2 orbit angle",
+		name = "Added chance for every luck",
 		default_value = 5.0
 	}))
 
@@ -32,8 +32,7 @@ func init_mod() -> void:
 		var base_drop_chance: float = ModLoader.config.get_setting_value(MOD_NAME, "base-drop-chance")
 		var luck_effect: float = ModLoader.config.get_setting_value(MOD_NAME, "luck-effect")
 		
-		var can_spawn: bool = randf_range(0.0, 100.0) <= base_drop_chance + (Stats.luck * luck_effect)
-		if not can_spawn:
+		if not PickupHandler._check_can_spawn(luck_effect, base_drop_chance):
 			return null
 		
 		print("Dropped energy")
