@@ -14,6 +14,7 @@ shader_parameter/add_margins = true
 shader_parameter/number_of_images = Vector2(1, 1)
 
 [node name="BaseActiveItem" type="Node2D" unique_id=609302391]
+show_behind_parent = true
 script = ExtResource("1_wvtbq")
 
 [node name="TextureProgressBar" type="TextureProgressBar" parent="." unique_id=280663868]
@@ -22,10 +23,10 @@ material = SubResource("ShaderMaterial_267gn")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -25.0
-offset_top = -25.0
-offset_right = 25.0
-offset_bottom = 25.0
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.781, 0.781)

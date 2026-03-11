@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://cnt2pgc04wqmn"]
+
+[ext_resource type="PackedScene" uid="uid://bkabkxifnysbf" path="res://ActiveMod/base_active_item/BaseActiveItem.tscn" id="1_ocn64"]
+[ext_resource type="Script" uid="uid://cmscoh64dmyqh" path="res://ActiveMod/active_items/black_hole/BlackHoleActiveItem.gd" id="2_nvr3i"]
+[ext_resource type="Shader" uid="uid://badrwf50t1gdb" path="res://shaders/Outline.gdshader" id="3_ocn64"]
+[ext_resource type="Texture2D" uid="uid://chmwg166ceaku" path="res://ActiveMod/active_items/black_hole/hole.png" id="4_ocn64"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dcdxm"]
+shader = ExtResource("3_ocn64")
+shader_parameter/color = Color(2, 1.68, 0, 1)
+shader_parameter/width = 4.00000019
+shader_parameter/pattern = 2
+shader_parameter/inside = false
+shader_parameter/add_margins = true
+shader_parameter/number_of_images = Vector2(1, 1)
+
+[node name="BlackHoleActiveItem" unique_id=609302391 instance=ExtResource("1_ocn64")]
+script = ExtResource("2_nvr3i")
+
+[node name="TextureProgressBar" parent="." index="0" unique_id=280663868]
+material = SubResource("ShaderMaterial_dcdxm")
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -42.0
+offset_top = -42.0
+offset_right = 38.0
+offset_bottom = 38.0
+scale = Vector2(0.556, 0.556)
+value = 1.0
+fill_mode = 4
+radial_initial_angle = 0.0
+texture_progress = ExtResource("4_ocn64")

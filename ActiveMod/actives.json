@@ -2,5 +2,9 @@
   "DefaultBackground": {
     "name": "Candy Heart",
     "scene": "res://ActiveMod/active_items/healing/HealingActiveItem.tscn"
+  },
+  "BloodHunterBackground": {
+    "name": "Black Hole",
+    "scene": "res://ActiveMod/active_items/black_hole/BlackHoleActiveItem.tscn"
   }
 }
