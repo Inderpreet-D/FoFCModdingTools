@@ -2,5 +2,5 @@
   "name": "Active Mod",
   "version": "1.0.0",
   "description": "Adds active items to backgrounds.",
-  "controls": "F (Keyboard) / Left Bumper (Controller) - Use active item when charged."
+  "controls": "F, J, K (Keyboard) / Left Bumper (Controller) - Use active item when charged."
 }

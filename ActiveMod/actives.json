@@ -1,0 +1,6 @@
+{
+  "DefaultBackground": {
+    "name": "Candy Heart",
+    "scene": "res://ActiveMod/active_items/healing/HealingActiveItem.tscn"
+  }
+}
