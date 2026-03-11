@@ -17,6 +17,6 @@ offset_left = -8.0
 offset_top = -5.5
 offset_right = 4.0
 offset_bottom = 5.5
-scale = Vector2(4.167, 4.167)
+scale = Vector2(4.167, 4.545)
 value = 1.0
 texture_progress = ExtResource("3_jxpmy")
