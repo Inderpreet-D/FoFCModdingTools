@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://vjuhunm2uboy"]
+[gd_scene format=3 uid="uid://vjuhunm2uboy"]
 
 [ext_resource type="Script" uid="uid://l1rdargfn67o" path="res://addons/script-ide/tabbar/multiline_tab_container.gd" id="1"]
 
