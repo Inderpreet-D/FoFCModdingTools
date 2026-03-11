@@ -35,7 +35,7 @@ func init_mod() -> void:
 		# Remove exising node if it exists
 		var existing_node: Node = ModLoader.get_node_or_null(node_name)
 		if existing_node:
-			prints("Removed existing blink node")
+			print("Removed existing blink node")
 			existing_node.queue_free()
 			ModLoader.remove_child(existing_node)
 		
