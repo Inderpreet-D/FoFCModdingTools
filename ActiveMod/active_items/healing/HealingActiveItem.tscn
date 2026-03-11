@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://dhskt53fcsgil"]
+
+[ext_resource type="PackedScene" uid="uid://bkabkxifnysbf" path="res://ActiveMod/base_active_item/BaseActiveItem.tscn" id="1_jgg4k"]
+[ext_resource type="Script" uid="uid://dbr3kmsb6jhgc" path="res://ActiveMod/active_items/healing/HealingActiveItem.gd" id="2_4j7rt"]
+[ext_resource type="Texture2D" uid="uid://bw8a4s7lqnfkr" path="res://assets/sprites/pickup/health.png" id="3_jxpmy"]
+
+[node name="HealingActiveItem" unique_id=609302391 instance=ExtResource("1_jgg4k")]
+script = ExtResource("2_4j7rt")
+
+[node name="TextureProgressBar" parent="." index="0" unique_id=280663868]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 12.0
+offset_bottom = 11.0
+grow_horizontal = 1
+grow_vertical = 1
+scale = Vector2(4.167, 4.167)
+texture_progress = ExtResource("3_jxpmy")

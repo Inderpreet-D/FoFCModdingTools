@@ -1,26 +1,41 @@
 extends Node
 
 
+# TODO Add a static dictionary and func to add overrides / extensions
+
 var _active: bool = false
+var _items: Array[BaseActiveItem] = []
 
 
 func _ready() -> void:
-	prints("Create active manager")
 	EventBus.game_started.connect(_on_game_started)
-	EventBus.player_spawned.connect(_on_player_spawned)
 	EventBus.player_died.connect(_on_player_died)
 
 
-func _on_game_started() -> void:
-	prints("Active")
-	_active = true
-
-
-func _on_player_spawned(player: Player) -> void:
-	if not is_instance_valid(player.background):
-		return
+func _get_item_instance(background: Background) -> BaseActiveItem:
+	var scene: PackedScene = load("res://ActiveMod/base_active_item/BaseActiveItem.tscn")
 	
-	prints("BG", player.background)
+	# TODO Get from static dictionary
+	if background is DefaultBackground:
+		scene = load("res://ActiveMod/active_items/healing/HealingActiveItem.tscn")
+	
+	return scene.instantiate()
+
+
+func _on_game_started() -> void:
+	_active = true
+	
+	for item: BaseActiveItem in _items:
+		if is_instance_valid(item):
+			item.clean_up()
+	
+	_items = []
+	
+	for player: Player in Utilities.get_all_players():
+		var item: BaseActiveItem = _get_item_instance(player.background)
+		item.setup(player)
+		_items.append(item)
+		player.add_child(item)
 
 
 func _on_player_died() -> void:
@@ -35,9 +50,20 @@ func _on_player_died() -> void:
 	
 	if num_dead_players == num_players:
 		_active = false
-		prints("Inactive")
 
 
 func _process(_delta: float) -> void:
 	if not _active:
 		return
+	
+	if not Input.is_action_just_pressed("use_active_item"):
+		return
+	
+	for item: BaseActiveItem in _items:
+		if not item.can_activate():
+			continue
+		
+		if not is_instance_valid(item._player):
+			continue
+		
+		item.activate()
