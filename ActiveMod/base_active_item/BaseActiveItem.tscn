@@ -6,7 +6,7 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_267gn"]
 shader = ExtResource("2_diaoi")
-shader_parameter/color = Color(1, 0.84313726, 0, 1)
+shader_parameter/color = Color(2, 1.68, 0, 1)
 shader_parameter/width = 1.0
 shader_parameter/pattern = 0
 shader_parameter/inside = false

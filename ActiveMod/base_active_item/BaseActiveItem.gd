@@ -8,6 +8,7 @@ class_name BaseActiveItem extends Node2D
 var _player: Player
 var _elapsed: float
 var _charge_time: float
+var _start_charged: bool = true
 
 
 func _ready() -> void:
@@ -17,8 +18,12 @@ func _ready() -> void:
 func setup(player: Player) -> void:
 	global_position = player.global_position + Vector2(0, 125)
 	_player = player
-	_elapsed = 0.0
 	_charge_time = 10.0
+	
+	if _start_charged:
+		_elapsed = _charge_time
+	else:
+		_elapsed = 0.0
 
 
 func can_activate() -> bool:
@@ -31,11 +36,12 @@ func _process(delta: float) -> void:
 	texture_progress_bar.value = progress
 	
 	var final_color: Color = Color(2.0, 2.0, 2.0, 1.0)
+	var gold_color: Color = Color(2.0, 1.68, 0.0, 1.0)
 	if can_activate():
 		texture_progress_bar.modulate = final_color
-		texture_progress_bar_material.set_shader_parameter("color", Color("#ffd700"))
+		texture_progress_bar_material.set_shader_parameter("color", gold_color)
 	else:
-		texture_progress_bar.modulate = lerp(Color.TRANSPARENT, final_color, progress)
+		texture_progress_bar.modulate = lerp(Color.WHITE, final_color, progress)
 		texture_progress_bar_material.set_shader_parameter("color", Color.TRANSPARENT)
 
 
