@@ -9,6 +9,7 @@ var _player: Player
 var _elapsed: float
 var _charge_time: float
 var _start_charged: bool = true
+var _auto_activate: bool = false
 
 
 func _ready() -> void:
@@ -43,6 +44,9 @@ func _process(delta: float) -> void:
 	else:
 		texture_progress_bar.modulate = lerp(Color.WHITE, final_color, progress)
 		texture_progress_bar_material.set_shader_parameter("color", Color.TRANSPARENT)
+	
+	if _auto_activate and can_activate():
+		activate()
 
 
 func activate() -> void:

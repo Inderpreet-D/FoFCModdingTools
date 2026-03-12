@@ -6,5 +6,9 @@
   "BloodHunterBackground": {
     "name": "Black Hole",
     "scene": "res://ActiveMod/active_items/black_hole/BlackHoleActiveItem.tscn"
+  },
+  "BigGameHunterBackground": {
+    "name": "Binoculars",
+    "scene": "res://ActiveMod/active_items/binoculars/BinocularsActiveItem.tscn"
   }
 }
