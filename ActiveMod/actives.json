@@ -18,5 +18,10 @@
     "name": "Shackles",
     "description": "Automatically stun bosses for 15 seconds when they spawn",
     "scene": "res://ActiveMod/active_items/shackles/ShacklesActiveItem.tscn"
+  },
+  "BigFarterBackground": {
+    "name": "Magnet",
+    "description": "Pulls in all pickups when used",
+    "scene": "res://ActiveMod/active_items/magnet/MagnetActiveItem.tscn"
   }
 }
