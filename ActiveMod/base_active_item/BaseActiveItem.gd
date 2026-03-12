@@ -1,8 +1,9 @@
 class_name BaseActiveItem extends Node2D
 
 
-@onready var texture_progress_bar: TextureProgressBar = %TextureProgressBar
-@onready var texture_progress_bar_material: ShaderMaterial = texture_progress_bar.material
+@onready var sprite_2d: Sprite2D = %Sprite2D
+@onready var sprite_2d_material: ShaderMaterial = sprite_2d.material
+@onready var canvas_group_material: ShaderMaterial = (%CanvasGroup as CanvasGroup).material
 
 
 var _player: Player
@@ -13,7 +14,7 @@ var _auto_activate: bool = false
 
 
 func _ready() -> void:
-	texture_progress_bar.position = -texture_progress_bar.size / 2.0
+	sprite_2d.scale = Vector2(50, 50) / sprite_2d.texture.get_size()
 
 
 func setup(player: Player) -> void:
@@ -42,20 +43,20 @@ func _get_final_color() -> Color:
 
 
 func update_charged_ui() -> void:
-	texture_progress_bar.modulate = _get_final_color()
+	sprite_2d.modulate = _get_final_color()
 	var gold_color: Color = Color(2.0, 1.68, 0.0, 1.0)
-	texture_progress_bar_material.set_shader_parameter("color", gold_color)
+	canvas_group_material.set_shader_parameter("color", gold_color)
 
 
 func update_uncharged_ui(progress: float) -> void:
-	texture_progress_bar.modulate = lerp(Color.WHITE, _get_final_color(), progress)
-	texture_progress_bar_material.set_shader_parameter("color", Color.TRANSPARENT)
+	sprite_2d.modulate = lerp(Color.WHITE, _get_final_color(), progress)
+	canvas_group_material.set_shader_parameter("color", Color.TRANSPARENT)
 
 
 func _process(delta: float) -> void:
 	_elapsed += delta
 	var progress: float = get_charge_progress()
-	texture_progress_bar.value = progress
+	sprite_2d_material.set_shader_parameter("progress", progress)
 	
 	if can_activate():
 		update_charged_ui()
