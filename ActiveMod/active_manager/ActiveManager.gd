@@ -98,6 +98,10 @@ static func add_item(background_key: String, info: Dictionary) -> void:
 		print("[ActiveMod] unable to add item for background \"%s\", name is missing" % background_key)
 		return
 	
+	if not info.has("description"):
+		print("[ActiveMod] unable to add item for background \"%s\", description is missing" % background_key)
+		return
+	
 	if not info.has("scene"):
 		print("[ActiveMod] unable to add item for background \"%s\", scene is missing" % background_key)
 		return

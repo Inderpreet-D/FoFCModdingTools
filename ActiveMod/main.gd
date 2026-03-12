@@ -26,8 +26,12 @@ func _modify_background_descriptions() -> void:
 		
 		var info: Dictionary = ActiveManager.item_info.get(key)
 		var item_name: String = info.get("name")
+		var item_description: String = info.get("description")
 		var def: BackgroundDef = DefHandler.backgrounds[key]
-		def._description += "\n%s" % def.build_description(["+Starts with %s" % item_name])
+		var desc_lines: Array = [
+			"+Starts with %s" % Keywords._create_hint(item_name, item_description, "hot pink")
+		]
+		def._description += "\n%s" % def.build_description(desc_lines)
 
 
 func init_mod() -> void:

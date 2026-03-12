@@ -1,14 +1,17 @@
 {
   "DefaultBackground": {
     "name": "Candy Heart",
+    "description": "Heals you for 25% of your max health over 4 seconds when used",
     "scene": "res://ActiveMod/active_items/healing/HealingActiveItem.tscn"
   },
   "BloodHunterBackground": {
     "name": "Black Hole",
+    "description": "Creates a black hole that pulls in enemies for 8 seconds when used",
     "scene": "res://ActiveMod/active_items/black_hole/BlackHoleActiveItem.tscn"
   },
   "BigGameHunterBackground": {
     "name": "Binoculars",
+    "description": "Automatically marks bosses and has a 25% chance to mark enemies every 30 seconds",
     "scene": "res://ActiveMod/active_items/binoculars/BinocularsActiveItem.tscn"
   }
 }
