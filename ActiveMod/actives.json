@@ -23,5 +23,10 @@
     "name": "Magnet",
     "description": "Pulls in all pickups when used",
     "scene": "res://ActiveMod/active_items/magnet/MagnetActiveItem.tscn"
+  },
+  "MagiTouchedBackground": {
+    "name": "Font of Magic",
+    "description": "Applies a random status effect to 3 random enemies",
+    "scene": "res://ActiveMod/active_items/font_of_magic/FontOfMagicActiveItem.tscn"
   }
 }
