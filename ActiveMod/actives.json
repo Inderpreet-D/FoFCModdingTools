@@ -13,5 +13,10 @@
     "name": "Binoculars",
     "description": "Automatically marks bosses and has a 25% chance to mark enemies every 30 seconds",
     "scene": "res://ActiveMod/active_items/binoculars/BinocularsActiveItem.tscn"
+  },
+  "BigPictureThinkerBackground": {
+    "name": "Shackles",
+    "description": "Automatically stun bosses for 15 seconds when they spawn",
+    "scene": "res://ActiveMod/active_items/shackles/ShacklesActiveItem.tscn"
   }
 }

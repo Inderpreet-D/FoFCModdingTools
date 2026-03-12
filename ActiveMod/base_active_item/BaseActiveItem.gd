@@ -31,19 +31,36 @@ func can_activate() -> bool:
 	return _elapsed >= _charge_time
 
 
+func get_charge_progress() -> float:
+	var progress: float = clampf(_elapsed / _charge_time, 0.0, 1.0)
+	return progress
+
+
+func _get_final_color() -> Color:
+	var final_color: Color = Color(2.0, 2.0, 2.0, 1.0)
+	return final_color
+
+
+func update_charged_ui() -> void:
+	texture_progress_bar.modulate = _get_final_color()
+	var gold_color: Color = Color(2.0, 1.68, 0.0, 1.0)
+	texture_progress_bar_material.set_shader_parameter("color", gold_color)
+
+
+func update_uncharged_ui(progress: float) -> void:
+	texture_progress_bar.modulate = lerp(Color.WHITE, _get_final_color(), progress)
+	texture_progress_bar_material.set_shader_parameter("color", Color.TRANSPARENT)
+
+
 func _process(delta: float) -> void:
 	_elapsed += delta
-	var progress: float = clampf(_elapsed / _charge_time, 0.0, 1.0)
+	var progress: float = get_charge_progress()
 	texture_progress_bar.value = progress
 	
-	var final_color: Color = Color(2.0, 2.0, 2.0, 1.0)
-	var gold_color: Color = Color(2.0, 1.68, 0.0, 1.0)
 	if can_activate():
-		texture_progress_bar.modulate = final_color
-		texture_progress_bar_material.set_shader_parameter("color", gold_color)
+		update_charged_ui()
 	else:
-		texture_progress_bar.modulate = lerp(Color.WHITE, final_color, progress)
-		texture_progress_bar_material.set_shader_parameter("color", Color.TRANSPARENT)
+		update_uncharged_ui(progress)
 	
 	if _auto_activate and can_activate():
 		activate()

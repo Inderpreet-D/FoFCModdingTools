@@ -3,20 +3,31 @@
 [ext_resource type="PackedScene" uid="uid://bkabkxifnysbf" path="res://ActiveMod/base_active_item/BaseActiveItem.tscn" id="1_44546"]
 [ext_resource type="Script" uid="uid://dw0t3fhcjronk" path="res://ActiveMod/active_items/binoculars/BinocularsActiveItem.gd" id="2_7sily"]
 [ext_resource type="Texture2D" uid="uid://dno6q20by1jfr" path="res://ActiveMod/active_items/binoculars/binoculars.png" id="3_0no6h"]
+[ext_resource type="Shader" uid="uid://badrwf50t1gdb" path="res://shaders/Outline.gdshader" id="3_po0vd"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6wv1y"]
+shader = ExtResource("3_po0vd")
+shader_parameter/color = Color(2, 1.68, 0, 1)
+shader_parameter/width = 2.000000095
+shader_parameter/pattern = 0
+shader_parameter/inside = false
+shader_parameter/add_margins = true
+shader_parameter/number_of_images = Vector2(1, 1)
 
 [node name="BinocularsActiveItem" unique_id=609302391 instance=ExtResource("1_44546")]
 script = ExtResource("2_7sily")
 
 [node name="TextureProgressBar" parent="." index="0" unique_id=280663868]
+material = SubResource("ShaderMaterial_6wv1y")
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -17.0
-offset_top = -18.0
-offset_right = 15.0
-offset_bottom = 14.0
+offset_left = -17.5
+offset_top = -19.0
+offset_right = 14.5
+offset_bottom = 13.0
 scale = Vector2(1.563, 1.563)
 value = 1.0
 fill_mode = 7

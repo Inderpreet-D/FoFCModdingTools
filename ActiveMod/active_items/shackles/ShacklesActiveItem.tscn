@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://b7mmsiftccn1a"]
+
+[ext_resource type="PackedScene" uid="uid://bkabkxifnysbf" path="res://ActiveMod/base_active_item/BaseActiveItem.tscn" id="1_tdwc7"]
+[ext_resource type="Script" uid="uid://c5h6bb17ufpgx" path="res://ActiveMod/active_items/shackles/ShacklesActiveItem.gd" id="2_fxevm"]
+[ext_resource type="Shader" uid="uid://badrwf50t1gdb" path="res://shaders/Outline.gdshader" id="3_nh3oj"]
+[ext_resource type="Texture2D" uid="uid://cm0171cogw204" path="res://ActiveMod/active_items/shackles/shackles.png" id="4_xqy0u"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bois6"]
+shader = ExtResource("3_nh3oj")
+shader_parameter/color = Color(2, 1.68, 0, 1)
+shader_parameter/width = 1.0
+shader_parameter/pattern = 0
+shader_parameter/inside = false
+shader_parameter/add_margins = true
+shader_parameter/number_of_images = Vector2(1, 1)
+
+[node name="ShacklesActiveItem" unique_id=609302391 instance=ExtResource("1_tdwc7")]
+script = ExtResource("2_fxevm")
+
+[node name="TextureProgressBar" parent="." index="0" unique_id=280663868]
+material = SubResource("ShaderMaterial_bois6")
+offset_left = -16.0
+offset_top = -16.0
+offset_right = 16.0
+offset_bottom = 16.0
+scale = Vector2(1.563, 1.563)
+fill_mode = 3
+texture_progress = ExtResource("4_xqy0u")
