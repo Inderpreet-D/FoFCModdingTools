@@ -1,7 +1,7 @@
 extends BaseActiveItem
 
 
-var _num_affected_enemies: int = 3
+var _num_affected_enemies: int = 10
 
 
 func setup(player: Player) -> void:
