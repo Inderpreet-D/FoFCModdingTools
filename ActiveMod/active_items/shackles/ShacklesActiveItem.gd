@@ -1,7 +1,12 @@
-extends BaseActiveItem
+extends "res://ActiveMod/base_active_item/BaseActiveItem.gd"
 
 
 var _stun_time: float = 15.0
+
+
+func _ready() -> void:
+	sprite_2d.texture = Utilities.load_image_from_path("res://ActiveMod/active_items/shackles/shackles.png")
+	super._ready()
 
 
 func setup(player: Player) -> void:

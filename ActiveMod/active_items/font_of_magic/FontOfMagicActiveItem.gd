@@ -1,7 +1,12 @@
-extends BaseActiveItem
+extends "res://ActiveMod/base_active_item/BaseActiveItem.gd"
 
 
 var _num_affected_enemies: int = 10
+
+
+func _ready() -> void:
+	sprite_2d.texture = Utilities.load_image_from_path("res://ActiveMod/active_items/font_of_magic/font_of_magic.png")
+	super._ready()
 
 
 func setup(player: Player) -> void:

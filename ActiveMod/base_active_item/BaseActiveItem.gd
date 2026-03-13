@@ -1,4 +1,4 @@
-class_name BaseActiveItem extends Node2D
+extends Node2D
 
 
 @onready var sprite_2d: Sprite2D = %Sprite2D

@@ -1,4 +1,4 @@
-extends BaseActiveItem
+extends "res://ActiveMod/base_active_item/BaseActiveItem.gd"
 
 
 func setup(player: Player) -> void:

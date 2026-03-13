@@ -1,4 +1,4 @@
-extends BaseActiveItem
+extends "res://ActiveMod/base_active_item/BaseActiveItem.gd"
 
 
 var _lightning_level: int = 10

@@ -1,4 +1,9 @@
-extends BaseActiveItem
+extends "res://ActiveMod/base_active_item/BaseActiveItem.gd"
+
+
+func _ready() -> void:
+	sprite_2d.texture = Utilities.load_image_from_path("res://ActiveMod/active_items/black_hole/hole.png")
+	super._ready()
 
 
 func setup(player: Player) -> void:

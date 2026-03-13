@@ -1,4 +1,4 @@
-extends BaseActiveItem
+extends "res://ActiveMod/base_active_item/BaseActiveItem.gd"
 
 
 const BUFF_NAME: String = "RegenBuff"
