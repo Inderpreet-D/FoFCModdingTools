@@ -2,6 +2,11 @@
 
 [ext_resource type="PackedScene" uid="uid://bkabkxifnysbf" path="res://ActiveMod/base_active_item/BaseActiveItem.tscn" id="1_f5qhf"]
 [ext_resource type="Script" uid="uid://bha8mgq1q1del" path="res://ActiveMod/active_items/hair_trigger/HairTriggerActiveItem.gd" id="2_lrl1c"]
+[ext_resource type="Texture2D" uid="uid://57hv1qdgf4wu" path="res://assets/sprites/weapon/shotgun/pellet-icon.png" id="3_atd87"]
 
 [node name="HairTriggerActiveItem" unique_id=609302391 instance=ExtResource("1_f5qhf")]
 script = ExtResource("2_lrl1c")
+
+[node name="Sprite2D" parent="CanvasGroup" parent_id_path=PackedInt32Array(446311845) index="0" unique_id=1474890982]
+scale = Vector2(1.429, 1.563)
+texture = ExtResource("3_atd87")

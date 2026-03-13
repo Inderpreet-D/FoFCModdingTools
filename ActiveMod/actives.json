@@ -33,5 +33,10 @@
     "name": "Hair Trigger",
     "description": "Attack 50% faster for 10 seconds when used",
     "scene": "res://ActiveMod/active_items/hair_trigger/HairTriggerActiveItem.tscn"
+  },
+  "NerdjaminDorklinBackground": {
+    "name": "Cloud Seeder",
+    "description": "Causes your cloud to create lightning when used",
+    "scene": "res://ActiveMod/active_items/cloud_seeder/CloudSeederActiveItem.tscn"
   }
 }

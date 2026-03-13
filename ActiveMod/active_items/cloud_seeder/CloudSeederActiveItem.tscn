@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://c485v2rge0irf"]
+
+[ext_resource type="PackedScene" uid="uid://bkabkxifnysbf" path="res://ActiveMod/base_active_item/BaseActiveItem.tscn" id="1_b8fgk"]
+[ext_resource type="Script" uid="uid://cv7i8gvw55xbq" path="res://ActiveMod/active_items/cloud_seeder/CloudSeederActiveItem.gd" id="2_7rn46"]
+[ext_resource type="Texture2D" uid="uid://b0ltqkjavkirm" path="res://assets/sprites/pet/cloud/lightning.png" id="3_8fpwf"]
+
+[node name="CloudSeederActiveItem" unique_id=609302391 instance=ExtResource("1_b8fgk")]
+script = ExtResource("2_7rn46")
+
+[node name="Sprite2D" parent="CanvasGroup" parent_id_path=PackedInt32Array(446311845) index="0" unique_id=1474890982]
+scale = Vector2(0.833, 0.847)
+texture = ExtResource("3_8fpwf")
