@@ -7,8 +7,8 @@ class_name BaseActiveItem extends Node2D
 
 
 var _player: Player
-var _elapsed: float
-var _charge_time: float
+var _elapsed: float = 0.0
+var _charge_time: float = 10.0
 var _start_charged: bool = true
 var _auto_activate: bool = false
 
