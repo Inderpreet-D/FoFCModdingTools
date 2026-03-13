@@ -48,5 +48,10 @@
     "name": "Handful of Bullets",
     "description": "Double all follower projectiles for 10 seconds when used",
     "scene": "res://ActiveMod/active_items/handful/HandfulActiveItem.tscn"
+  },
+  "TeacherBackground": {
+    "name": "Reading Time",
+    "description": "Stop moving and attacking for 10 seconds but gain 1 level when used",
+    "scene": "res://ActiveMod/active_items/reading_time/ReadingTimeActiveItem.tscn"
   }
 }
