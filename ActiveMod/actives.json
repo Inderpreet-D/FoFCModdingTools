@@ -28,5 +28,10 @@
     "name": "Font of Magic",
     "description": "Applies a random status effect to 10 random enemies",
     "scene": "res://ActiveMod/active_items/font_of_magic/FontOfMagicActiveItem.tscn"
+  },
+  "OptometristBackground": {
+    "name": "Hair Trigger",
+    "description": "Attack 50% faster for 10 seconds when used",
+    "scene": "res://ActiveMod/active_items/hair_trigger/HairTriggerActiveItem.tscn"
   }
 }

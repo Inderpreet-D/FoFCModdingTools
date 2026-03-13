@@ -73,3 +73,11 @@ func activate() -> void:
 
 func clean_up() -> void:
 	queue_free()
+
+
+func add_buff(buff: Buff) -> void:
+	if not is_instance_valid(_player):
+		return
+	
+	_player.effects.add_effect(buff)
+	EventBus.inventory_updated.emit()
