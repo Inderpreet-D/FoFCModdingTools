@@ -53,5 +53,10 @@
     "name": "Reading Time",
     "description": "Stop moving and attacking for 10 seconds but gain 1 level when used",
     "scene": "res://ActiveMod/active_items/reading_time/ReadingTimeActiveItem.tscn"
+  },
+  "SilverTonguePreacherBackground": {
+    "name": "Golden Mind",
+    "description": "Enemies drop more knowledge when killed for 20 seconds when used",
+    "scene": "res://ActiveMod/active_items/golden_mind/GoldenMindActiveItem.tscn"
   }
 }

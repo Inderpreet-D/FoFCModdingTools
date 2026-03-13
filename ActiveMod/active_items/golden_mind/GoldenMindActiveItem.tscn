@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://7v4cm8r4r2i4"]
+
+[ext_resource type="PackedScene" uid="uid://bkabkxifnysbf" path="res://ActiveMod/base_active_item/BaseActiveItem.tscn" id="1_gehpl"]
+[ext_resource type="Script" uid="uid://1j2e81fjmtn3" path="res://ActiveMod/active_items/golden_mind/GoldenMindActiveItem.gd" id="2_fxg45"]
+[ext_resource type="Texture2D" uid="uid://wr1e6gu5y2ij" path="res://ActiveMod/active_items/golden_mind/golden_mind.png" id="3_fxg45"]
+
+[node name="GoldenMindActiveItem" unique_id=609302391 instance=ExtResource("1_gehpl")]
+script = ExtResource("2_fxg45")
+
+[node name="Sprite2D" parent="CanvasGroup" parent_id_path=PackedInt32Array(446311845) index="0" unique_id=1474890982]
+scale = Vector2(1.563, 1.563)
+texture = ExtResource("3_fxg45")
