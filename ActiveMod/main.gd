@@ -24,8 +24,5 @@ func init_mod() -> void:
 	
 	_add_input_events()
 	
-	ActiveManager.load_items_from_json()
-	ActiveManager.modify_background_descriptions()
-	
 	var manager_scene: PackedScene = load("res://ActiveMod/active_manager/ActiveManager.tscn")
 	Global.add_child(manager_scene.instantiate())

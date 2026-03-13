@@ -43,5 +43,10 @@
     "name": "Kamikaze",
     "description": "Explodes and damages nearby enemies for 500% of your max health when used at the cost of 50% of your current health",
     "scene": "res://ActiveMod/active_items/kamikaze/KamikazeActiveItem.tscn"
+  },
+  "PterodactylBackground": {
+    "name": "Handful of Bullets",
+    "description": "Double all follower projectiles for 10 seconds when used",
+    "scene": "res://ActiveMod/active_items/handful/HandfulActiveItem.tscn"
   }
 }

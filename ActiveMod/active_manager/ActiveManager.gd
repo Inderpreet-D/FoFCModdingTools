@@ -1,12 +1,15 @@
-class_name ActiveManager extends Node
+extends Node
 
 
-static var item_info: Dictionary = {}
+var item_info: Dictionary = {}
 var _active: bool = false
 var _items: Array[BaseActiveItem] = []
 
 
 func _ready() -> void:
+	load_items_from_json()
+	modify_background_descriptions()
+	
 	EventBus.game_started.connect(_on_game_started)
 	EventBus.player_died.connect(_on_player_died)
 
@@ -89,7 +92,7 @@ func _process(_delta: float) -> void:
 
 
 # Can be used by other mods to add / overwrite items for specific backgrounds
-static func add_item(background_key: String, info: Dictionary) -> void:
+func add_item(background_key: String, info: Dictionary) -> void:
 	if background_key.length() == 0:
 		print("[ActiveMod] unable to add item with invalid background key")
 		return
@@ -113,7 +116,7 @@ static func add_item(background_key: String, info: Dictionary) -> void:
 	item_info.set(background_key, info)
 
 
-static func load_items_from_json() -> void:
+func load_items_from_json() -> void:
 	var dict: Dictionary = Utilities.read_json_dict("res://ActiveMod/actives.json")
 	
 	for background_key: String in dict.keys():
@@ -121,7 +124,7 @@ static func load_items_from_json() -> void:
 		add_item(background_key, info_dict)
 
 
-static func modify_background_descriptions() -> void:
+func modify_background_descriptions() -> void:
 	for key: String in DefHandler.backgrounds:
 		if not item_info.has(key):
 			continue

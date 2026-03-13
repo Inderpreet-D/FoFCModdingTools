@@ -2,6 +2,6 @@
 
 [ext_resource type="Script" uid="uid://d2lweknu4jp03" path="res://ActiveMod/active_manager/ActiveManager.gd" id="1_m4y3l"]
 
-[node name="ActiveManager" type="Node" unique_id=1347484481]
+[node name="ActiveManager" type="Node" unique_id=1347484481 groups=["active_manager"]]
 process_mode = 1
 script = ExtResource("1_m4y3l")
