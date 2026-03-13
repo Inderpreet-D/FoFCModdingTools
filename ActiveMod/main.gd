@@ -19,29 +19,13 @@ func _add_input_events() -> void:
 	InputMap.action_add_event(action_name, controller_event)
 
 
-func _modify_background_descriptions() -> void:
-	for key: String in DefHandler.backgrounds:
-		if not ActiveManager.item_info.has(key):
-			continue
-		
-		var info: Dictionary = ActiveManager.item_info.get(key)
-		var item_name: String = info.get("name")
-		var item_description: String = info.get("description")
-		var def: BackgroundDef = DefHandler.backgrounds[key]
-		var desc_lines: Array = [
-			"+Starts with %s" % Keywords._create_hint(item_name, item_description, "hot pink")
-		]
-		def._description += "\n%s" % def.build_description(desc_lines)
-
-
 func init_mod() -> void:
 	print("Init active mod")
 	
 	_add_input_events()
 	
 	ActiveManager.load_items_from_json()
-	
-	_modify_background_descriptions()
+	ActiveManager.modify_background_descriptions()
 	
 	var manager_scene: PackedScene = load("res://ActiveMod/active_manager/ActiveManager.tscn")
 	Global.add_child(manager_scene.instantiate())

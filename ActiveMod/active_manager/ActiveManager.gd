@@ -119,3 +119,18 @@ static func load_items_from_json() -> void:
 	for background_key: String in dict.keys():
 		var info_dict: Dictionary = dict.get(background_key)
 		add_item(background_key, info_dict)
+
+
+static func modify_background_descriptions() -> void:
+	for key: String in DefHandler.backgrounds:
+		if not item_info.has(key):
+			continue
+		
+		var info: Dictionary = item_info.get(key)
+		var item_name: String = info.get("name")
+		var item_description: String = info.get("description")
+		var def: BackgroundDef = DefHandler.backgrounds[key]
+		var desc_lines: Array = [
+			"+Starts with %s" % Keywords._create_hint(item_name, item_description, "hot pink")
+		]
+		def._description += "\n%s" % def.build_description(desc_lines)
