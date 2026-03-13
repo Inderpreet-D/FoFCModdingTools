@@ -20,7 +20,6 @@ func _ready() -> void:
 func setup(player: Player) -> void:
 	global_position = player.global_position + Vector2(0, 125)
 	_player = player
-	_charge_time = 10.0
 	
 	if _start_charged:
 		_elapsed = _charge_time
