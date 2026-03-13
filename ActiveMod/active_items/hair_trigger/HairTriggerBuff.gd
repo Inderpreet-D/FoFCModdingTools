@@ -1,4 +1,4 @@
-class_name HairTriggerBuff extends Buff
+extends Buff
 
 
 const DELAY_MULT: float = 0.5

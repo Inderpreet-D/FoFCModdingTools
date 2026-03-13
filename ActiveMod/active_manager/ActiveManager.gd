@@ -3,7 +3,7 @@ extends Node
 
 var item_info: Dictionary = {}
 var _active: bool = false
-var _items: Array[BaseActiveItem] = []
+var _items: Array[Node2D] = []
 
 
 func _ready() -> void:
@@ -31,7 +31,7 @@ func _get_scene(background: Background) -> PackedScene:
 	return load(scene_path)
 
 
-func _get_item_instance(background: Background) -> BaseActiveItem:
+func _get_item_instance(background: Background) -> Node2D:
 	var scene: PackedScene = _get_scene(background)
 	
 	if not scene:
@@ -43,17 +43,19 @@ func _get_item_instance(background: Background) -> BaseActiveItem:
 func _on_game_started() -> void:
 	_active = true
 	
-	for item: BaseActiveItem in _items:
+	for item: Node2D in _items:
 		if is_instance_valid(item):
+			@warning_ignore("unsafe_method_access")
 			item.clean_up()
 	
 	_items = []
 	
 	for player: Player in Utilities.get_all_players():
-		var item: BaseActiveItem = _get_item_instance(player.background)
+		var item: Node2D = _get_item_instance(player.background)
 		if not item:
 			continue
 		
+		@warning_ignore("unsafe_method_access")
 		item.setup(player)
 		
 		_items.append(item)
@@ -81,13 +83,16 @@ func _process(_delta: float) -> void:
 	if not Input.is_action_just_pressed("use_active_item"):
 		return
 	
-	for item: BaseActiveItem in _items:
+	for item: Node2D in _items:
+		@warning_ignore("unsafe_method_access")
 		if not item.can_activate():
 			continue
 		
+		@warning_ignore("unsafe_property_access")
 		if not is_instance_valid(item._player):
 			continue
 		
+		@warning_ignore("unsafe_method_access")
 		item.activate()
 
 

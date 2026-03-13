@@ -1,4 +1,4 @@
-class_name RegenBuff extends Buff
+extends Buff
 
 
 const HEAL_PERCENT: float = 0.25

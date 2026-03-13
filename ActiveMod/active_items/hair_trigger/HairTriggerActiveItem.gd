@@ -1,10 +1,15 @@
 extends BaseActiveItem
 
 
+const BUFF_NAME: String = "HairTriggerBuff"
+
+
 var _duration: float = 10.0
 
 
 func setup(player: Player) -> void:
+	ClassRegistry.register(BUFF_NAME, "res://ActiveMod/active_items/hair_trigger/HairTriggerBuff.gd")
+	
 	_charge_time = 45.0
 	
 	super.setup(player)
@@ -13,4 +18,7 @@ func setup(player: Player) -> void:
 func activate() -> void:
 	super.activate()
 	
-	add_buff(HairTriggerBuff.new(_duration))
+	var buff_resource: Resource = ClassRegistry.get_loaded_class(BUFF_NAME)
+	@warning_ignore("unsafe_method_access")
+	var buff_instance: Buff = buff_resource.new(_duration)
+	add_buff(buff_instance)
