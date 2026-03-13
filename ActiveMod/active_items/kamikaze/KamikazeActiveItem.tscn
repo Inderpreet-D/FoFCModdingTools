@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://bdkyt3rl73ibo"]
+
+[ext_resource type="PackedScene" uid="uid://bkabkxifnysbf" path="res://ActiveMod/base_active_item/BaseActiveItem.tscn" id="1_g0i5f"]
+[ext_resource type="Script" uid="uid://3mdo6medig1f" path="res://ActiveMod/active_items/kamikaze/KamikazeActiveItem.gd" id="2_8lqw2"]
+[ext_resource type="Texture2D" uid="uid://c21jmu0ykuwpo" path="res://assets/sprites/weapon/bomb/bomb-icon-2.png" id="3_8lqw2"]
+
+[node name="KamikazeActiveItem" unique_id=609302391 instance=ExtResource("1_g0i5f")]
+script = ExtResource("2_8lqw2")
+
+[node name="Sprite2D" parent="CanvasGroup" parent_id_path=PackedInt32Array(446311845) index="0" unique_id=1474890982]
+scale = Vector2(1.563, 1.563)
+texture = ExtResource("3_8lqw2")
