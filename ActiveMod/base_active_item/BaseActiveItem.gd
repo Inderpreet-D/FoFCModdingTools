@@ -80,4 +80,5 @@ func add_buff(buff: Buff) -> void:
 		return
 	
 	_player.effects.add_effect(buff)
+	Passives.passives_changed.emit()
 	EventBus.inventory_updated.emit()

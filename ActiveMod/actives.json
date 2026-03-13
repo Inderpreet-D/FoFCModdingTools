@@ -26,7 +26,7 @@
   },
   "MagiTouchedBackground": {
     "name": "Font of Magic",
-    "description": "Applies a random status effect to 10 random enemies",
+    "description": "Applies a random status effect to 10 random enemies when used",
     "scene": "res://ActiveMod/active_items/font_of_magic/FontOfMagicActiveItem.tscn"
   },
   "OptometristBackground": {
