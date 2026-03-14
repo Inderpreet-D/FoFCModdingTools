@@ -63,5 +63,10 @@
     "name": "Emergency Shield",
     "description": "Gives a standard shield when used",
     "scene": "res://ActiveMod/active_items/emergency_shield/EmergencyShieldActiveItem.tscn"
+  },
+  "GottaGoFastBackground": {
+    "name": "Adrenaline Rush",
+    "description": "Gain a speed boost for 5 seconds when used",
+    "scene": "res://ActiveMod/active_items/adrenaline_rush/AdrenalineRushActiveItem.tscn"
   }
 }
