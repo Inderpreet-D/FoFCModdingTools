@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://dsv5pnphe1xeq"]
+
+[ext_resource type="PackedScene" uid="uid://bkabkxifnysbf" path="res://ActiveMod/base_active_item/BaseActiveItem.tscn" id="1_mdvay"]
+[ext_resource type="Script" uid="uid://d0nb056v6yk43" path="res://ActiveMod/active_items/high_noon/HighNoonActiveItem.gd" id="2_0663i"]
+[ext_resource type="Texture2D" uid="uid://cd2yilr7a0rmo" path="res://assets/sprites/status/status-mark.png" id="3_68ong"]
+
+[node name="HighNoonActiveItem" unique_id=609302391 instance=ExtResource("1_mdvay")]
+script = ExtResource("2_0663i")
+
+[node name="Sprite2D" parent="CanvasGroup" parent_id_path=PackedInt32Array(446311845) index="0" unique_id=1474890982]
+scale = Vector2(1.563, 1.563)
+texture = ExtResource("3_68ong")

@@ -73,5 +73,10 @@
     "name": "Burning Blood",
     "description": "Sacrifice 50% of your current health to make your followers attack 33% faster for 10 seconds when used, this effect can stack",
     "scene": "res://ActiveMod/active_items/burning_blood/BurningBloodActiveItem.tscn"
+  },
+  "CowboyPreacherBackground": {
+    "name": "High Noon",
+    "description": "Kill the 6 toughest enemies after a short delay when used",
+    "scene": "res://ActiveMod/active_items/high_noon/HighNoonActiveItem.tscn"
   }
 }
