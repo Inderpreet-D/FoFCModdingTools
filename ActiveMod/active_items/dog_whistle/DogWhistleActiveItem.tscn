@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://dlpx4kvvgtlaw"]
+
+[ext_resource type="PackedScene" uid="uid://bkabkxifnysbf" path="res://ActiveMod/base_active_item/BaseActiveItem.tscn" id="1_cw6rl"]
+[ext_resource type="Script" uid="uid://c051dnw8kbp2g" path="res://ActiveMod/active_items/dog_whistle/DogWhistleActiveItem.gd" id="2_4ba7x"]
+[ext_resource type="Texture2D" uid="uid://dncwlie0vsvr8" path="res://ActiveMod/active_items/dog_whistle/dog_whistle.png" id="3_gme76"]
+
+[node name="DogWhistleActiveItem" unique_id=609302391 instance=ExtResource("1_cw6rl")]
+script = ExtResource("2_4ba7x")
+
+[node name="Sprite2D" parent="CanvasGroup" parent_id_path=PackedInt32Array(446311845) index="0" unique_id=1474890982]
+scale = Vector2(1.563, 1.563)
+texture = ExtResource("3_gme76")

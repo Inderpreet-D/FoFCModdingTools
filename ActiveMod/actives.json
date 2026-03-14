@@ -83,5 +83,10 @@
     "name": "Divine Intervention",
     "description": "Gain invincibility for 10 seconds when used",
     "scene": "res://ActiveMod/active_items/divine_intervention/DivineInterventionActiveItem.tscn"
+  },
+  "DoggyPreacherBackground": {
+    "name": "Dog Whistle",
+    "description": "Has a 25% chance to stun each enemy for 5 seconds, activates automatically",
+    "scene": "res://ActiveMod/active_items/dog_whistle/DogWhistleActiveItem.tscn"
   }
 }
