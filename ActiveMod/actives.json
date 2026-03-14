@@ -58,5 +58,10 @@
     "name": "Golden Mind",
     "description": "Enemies drop more knowledge when killed for 20 seconds when used",
     "scene": "res://ActiveMod/active_items/golden_mind/GoldenMindActiveItem.tscn"
+  },
+  "FixedSituationBackground": {
+    "name": "Emergency Shield",
+    "description": "Gives a standard shield when used",
+    "scene": "res://ActiveMod/active_items/emergency_shield/EmergencyShieldActiveItem.tscn"
   }
 }
