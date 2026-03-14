@@ -68,5 +68,10 @@
     "name": "Adrenaline Rush",
     "description": "Gain a speed boost for 5 seconds when used",
     "scene": "res://ActiveMod/active_items/adrenaline_rush/AdrenalineRushActiveItem.tscn"
+  },
+  "HemomancerBackground": {
+    "name": "Burning Blood",
+    "description": "Sacrifice 50% of your current health to make your followers attack 33% faster for 10 seconds when used, this effect can stack",
+    "scene": "res://ActiveMod/active_items/burning_blood/BurningBloodActiveItem.tscn"
   }
 }
