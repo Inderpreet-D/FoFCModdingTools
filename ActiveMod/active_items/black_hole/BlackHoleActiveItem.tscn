@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://cnt2pgc04wqmn"]
+
+[ext_resource type="PackedScene" uid="uid://bkabkxifnysbf" path="res://ActiveMod/base_active_item/BaseActiveItem.tscn" id="1_ocn64"]
+[ext_resource type="Script" uid="uid://cmscoh64dmyqh" path="res://ActiveMod/active_items/black_hole/BlackHoleActiveItem.gd" id="2_nvr3i"]
+[ext_resource type="Texture2D" uid="uid://chmwg166ceaku" path="res://ActiveMod/active_items/black_hole/hole.png" id="4_ocn64"]
+
+[node name="BlackHoleActiveItem" unique_id=609302391 instance=ExtResource("1_ocn64")]
+script = ExtResource("2_nvr3i")
+
+[node name="Sprite2D" parent="CanvasGroup" parent_id_path=PackedInt32Array(446311845) index="0" unique_id=1474890982]
+scale = Vector2(0.625, 0.625)
+texture = ExtResource("4_ocn64")

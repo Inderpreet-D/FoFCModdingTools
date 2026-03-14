@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://dy7tnsdrt54jb"]
+
+[ext_resource type="PackedScene" uid="uid://bkabkxifnysbf" path="res://ActiveMod/base_active_item/BaseActiveItem.tscn" id="1_ufuxr"]
+[ext_resource type="Script" uid="uid://ujfo5nq37i1v" path="res://ActiveMod/active_items/burning_blood/BurningBloodActiveItem.gd" id="2_nq52h"]
+[ext_resource type="Texture2D" uid="uid://ccsi8ci0dx13d" path="res://assets/sprites/enemy/particle/blood.png" id="3_j17xi"]
+
+[node name="BurningBloodActiveItem" unique_id=609302391 instance=ExtResource("1_ufuxr")]
+script = ExtResource("2_nq52h")
+
+[node name="Sprite2D" parent="CanvasGroup" parent_id_path=PackedInt32Array(446311845) index="0" unique_id=1474890982]
+scale = Vector2(1.563, 1.563)
+texture = ExtResource("3_j17xi")

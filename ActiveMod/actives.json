@@ -1,0 +1,92 @@
+{
+  "DefaultBackground": {
+    "name": "Candy Heart",
+    "description": "Heals you for 25% of your max health over 4 seconds when used",
+    "scene": "res://ActiveMod/active_items/healing/HealingActiveItem.tscn"
+  },
+  "BloodHunterBackground": {
+    "name": "Black Hole",
+    "description": "Creates a black hole that pulls in enemies for 8 seconds when used",
+    "scene": "res://ActiveMod/active_items/black_hole/BlackHoleActiveItem.tscn"
+  },
+  "BigGameHunterBackground": {
+    "name": "Binoculars",
+    "description": "Automatically marks bosses and has a 25% chance to mark enemies every 30 seconds",
+    "scene": "res://ActiveMod/active_items/binoculars/BinocularsActiveItem.tscn"
+  },
+  "BigPictureThinkerBackground": {
+    "name": "Shackles",
+    "description": "Automatically stun bosses for 15 seconds when they spawn",
+    "scene": "res://ActiveMod/active_items/shackles/ShacklesActiveItem.tscn"
+  },
+  "BigFarterBackground": {
+    "name": "Magnet",
+    "description": "Pulls in all pickups when used",
+    "scene": "res://ActiveMod/active_items/magnet/MagnetActiveItem.tscn"
+  },
+  "MagiTouchedBackground": {
+    "name": "Font of Magic",
+    "description": "Applies a random status effect to 10 random enemies when used",
+    "scene": "res://ActiveMod/active_items/font_of_magic/FontOfMagicActiveItem.tscn"
+  },
+  "OptometristBackground": {
+    "name": "Hair Trigger",
+    "description": "Attack 50% faster for 10 seconds when used",
+    "scene": "res://ActiveMod/active_items/hair_trigger/HairTriggerActiveItem.tscn"
+  },
+  "NerdjaminDorklinBackground": {
+    "name": "Cloud Seeder",
+    "description": "Causes your cloud to create lightning when used",
+    "scene": "res://ActiveMod/active_items/cloud_seeder/CloudSeederActiveItem.tscn"
+  },
+  "ExplosiveExpertBackground": {
+    "name": "Kamikaze",
+    "description": "Explodes and damages nearby enemies for 500% of your max health when used at the cost of 50% of your current health",
+    "scene": "res://ActiveMod/active_items/kamikaze/KamikazeActiveItem.tscn"
+  },
+  "PterodactylBackground": {
+    "name": "Handful of Bullets",
+    "description": "Double all follower projectiles for 10 seconds when used",
+    "scene": "res://ActiveMod/active_items/handful/HandfulActiveItem.tscn"
+  },
+  "TeacherBackground": {
+    "name": "Reading Time",
+    "description": "Stop moving and attacking for 10 seconds but gain 1 level when used",
+    "scene": "res://ActiveMod/active_items/reading_time/ReadingTimeActiveItem.tscn"
+  },
+  "SilverTonguePreacherBackground": {
+    "name": "Golden Mind",
+    "description": "Enemies drop more knowledge when killed for 20 seconds when used",
+    "scene": "res://ActiveMod/active_items/golden_mind/GoldenMindActiveItem.tscn"
+  },
+  "FixedSituationBackground": {
+    "name": "Emergency Shield",
+    "description": "Gives a standard shield when used",
+    "scene": "res://ActiveMod/active_items/emergency_shield/EmergencyShieldActiveItem.tscn"
+  },
+  "GottaGoFastBackground": {
+    "name": "Adrenaline Rush",
+    "description": "Gain a speed boost for 5 seconds when used",
+    "scene": "res://ActiveMod/active_items/adrenaline_rush/AdrenalineRushActiveItem.tscn"
+  },
+  "HemomancerBackground": {
+    "name": "Burning Blood",
+    "description": "Sacrifice 50% of your current health to make your followers attack 33% faster for 10 seconds when used, this effect can stack",
+    "scene": "res://ActiveMod/active_items/burning_blood/BurningBloodActiveItem.tscn"
+  },
+  "CowboyPreacherBackground": {
+    "name": "High Noon",
+    "description": "Kill the 6 toughest enemies after a short delay when used",
+    "scene": "res://ActiveMod/active_items/high_noon/HighNoonActiveItem.tscn"
+  },
+  "MissionaryPreacherBackground": {
+    "name": "Divine Intervention",
+    "description": "Gain invincibility for 10 seconds when used",
+    "scene": "res://ActiveMod/active_items/divine_intervention/DivineInterventionActiveItem.tscn"
+  },
+  "DoggyPreacherBackground": {
+    "name": "Dog Whistle",
+    "description": "Has a 25% chance to stun each enemy for 5 seconds, activates automatically",
+    "scene": "res://ActiveMod/active_items/dog_whistle/DogWhistleActiveItem.tscn"
+  }
+}

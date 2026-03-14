@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://labe0g8plvf6"]
+
+[ext_resource type="PackedScene" uid="uid://bkabkxifnysbf" path="res://ActiveMod/base_active_item/BaseActiveItem.tscn" id="1_ago6g"]
+[ext_resource type="Script" uid="uid://chbw7ykpa0hp2" path="res://ActiveMod/active_items/emergency_shield/EmergencyShieldActiveItem.gd" id="2_0mwpw"]
+[ext_resource type="Texture2D" uid="uid://cp1mmxldk2rn5" path="res://assets/sprites/player/shield.png" id="3_cbik0"]
+
+[node name="EmergencyShieldActiveItem" unique_id=609302391 instance=ExtResource("1_ago6g")]
+script = ExtResource("2_0mwpw")
+
+[node name="Sprite2D" parent="CanvasGroup" parent_id_path=PackedInt32Array(446311845) index="0" unique_id=1474890982]
+scale = Vector2(1.563, 1.563)
+texture = ExtResource("3_cbik0")

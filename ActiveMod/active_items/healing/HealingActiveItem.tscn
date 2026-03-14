@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://dhskt53fcsgil"]
+
+[ext_resource type="PackedScene" uid="uid://bkabkxifnysbf" path="res://ActiveMod/base_active_item/BaseActiveItem.tscn" id="1_jgg4k"]
+[ext_resource type="Script" uid="uid://dbr3kmsb6jhgc" path="res://ActiveMod/active_items/healing/HealingActiveItem.gd" id="2_4j7rt"]
+[ext_resource type="Texture2D" uid="uid://bw8a4s7lqnfkr" path="res://assets/sprites/pickup/health.png" id="3_jxpmy"]
+
+[node name="HealingActiveItem" unique_id=609302391 instance=ExtResource("1_jgg4k")]
+script = ExtResource("2_4j7rt")
+
+[node name="Sprite2D" parent="CanvasGroup" parent_id_path=PackedInt32Array(446311845) index="0" unique_id=1474890982]
+scale = Vector2(4.167, 4.545)
+texture = ExtResource("3_jxpmy")

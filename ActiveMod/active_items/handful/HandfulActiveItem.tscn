@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://o3j0m2q2xq82"]
+
+[ext_resource type="PackedScene" uid="uid://bkabkxifnysbf" path="res://ActiveMod/base_active_item/BaseActiveItem.tscn" id="1_h0gip"]
+[ext_resource type="Script" uid="uid://c3urxoart3hea" path="res://ActiveMod/active_items/handful/HandfulActiveItem.gd" id="2_tg4ag"]
+[ext_resource type="Texture2D" uid="uid://d3aportw3pj6x" path="res://assets/sprites/shop/shop-gun-attack-speed-multiplier.png" id="3_mdrac"]
+
+[node name="HandfulActiveItem" unique_id=609302391 instance=ExtResource("1_h0gip")]
+script = ExtResource("2_tg4ag")
+
+[node name="Sprite2D" parent="CanvasGroup" parent_id_path=PackedInt32Array(446311845) index="0" unique_id=1474890982]
+scale = Vector2(1.563, 1.563)
+texture = ExtResource("3_mdrac")
