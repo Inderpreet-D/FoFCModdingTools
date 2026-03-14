@@ -78,5 +78,10 @@
     "name": "High Noon",
     "description": "Kill the 6 toughest enemies after a short delay when used",
     "scene": "res://ActiveMod/active_items/high_noon/HighNoonActiveItem.tscn"
+  },
+  "MissionaryPreacherBackground": {
+    "name": "Divine Intervention",
+    "description": "Gain invincibility for 10 seconds when used",
+    "scene": "res://ActiveMod/active_items/divine_intervention/DivineInterventionActiveItem.tscn"
   }
 }
